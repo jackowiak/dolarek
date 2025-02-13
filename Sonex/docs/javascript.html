@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SONEX – Documentation</title>
+	<link rel="icon" type="image/png" href="img/favicon.png">
+	<link rel="stylesheet" href="css/highlight.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<header>
+		<h1><a href="index.html">SONEX Documentation</a></h1>
+		<p>Eye-catching portfolio focused on showcase your talents and skills.</p><a class="button" href="#section-requirements">Get Started</a>
+	</header>
+	<div class="container">
+		<nav>
+			<div class="inner">
+				<ul>
+					<li><a href="index.html">Introduction</a>
+					</li>
+					<li class="parent"><span>HTML</span>
+						<ul>
+							<li><a href="html-common-parts.html">Common Parts</a>
+							</li>
+							<li><a href="html-index.html">Index Page</a>
+							</li>
+							<li><a href="html-project.html">Project Page</a>
+							</li>
+							<li><a href="html-project-alt.html">Project Page Alt</a>
+							</li>
+							<li><a href="html-about.html">About Page</a>
+							</li>
+							<li><a href="html-blog.html">Blog Page</a>
+							</li>
+							<li><a href="html-blog-alt.html">Blog Page Alt</a>
+							</li>
+							<li><a href="html-blog-single.html">Blog Single Page</a>
+							</li>
+							<li><a href="html-contact.html">Contact Page</a>
+							</li>
+						</ul>
+						<li><a href="css.html">CSS</a>
+						</li>
+						<li class="current"><a href="javascript.html">Javascript</a>
+						</li>
+						<li><a href="credits.html">Credits</a>
+						</li>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<main>
+			<div class="inner">
+				<h2>Javascript</h2>
+				<p>All javascript files located in <span class="selector">js</span> directory. Sonex require 6 javascript plugins:</p>
+				<ol>
+					<li>jquery-2.2.4.min.js</li>
+					<li>bootstrap.min.js</li>
+					<li>imagesloaded.pkgd.min.js</li>
+					<li>isotope.pkgd.min.js</li>
+					<li>jquery.magnific-popup.min.js</li>
+					<li>animsition.min.js</li>
+				</ol>
+				<p>Also Sonex require 1 main javascript file with user's functions called <span class="selector">functions.js</span>.</p>
+				<h4>jquery-2.2.4.min.js</h4>
+				<p>jQuery library. See more on <a href="http://jquery.com/" target="_blank">jquery.com</a>.</p>
+				<h4>bootstrap.min.js</h4>
+				<p>Bootstrap javascript library. See more on <a href="http://getbootstrap.com/" target="_blank">getbootstrap.com</a>.</p>
+				<h4>imagesloaded.pkgd.min.js</h4>
+				<p>Plugin which detect when images have been loaded on page. Used with Isotope on Gallery page. See more on <a href="http://imagesloaded.desandro.com" target="_blank">imagesloaded.desandro.com</a>.</p>
+				<h4>isotope.pkgd.min.js</h4>
+				<p>Filter and sort layout plugin which used on index pages with portfolio items. See more on <a href="http://isotope.metafizzy.co/" target="_blank">isotope.metafizzy.co</a>.</p>
+				<h4>jquery.magnific-popup.min.js</h4>
+				<p>Lightbox and gallery plugin used in gallery of project page. See more on <a href="http://dimsemenov.com/plugins/magnific-popup/" target="_blank">dimsemenov.com/plugins/magnific-popup/</a>.</p>
+				<h4>animsition.min.js</h4>
+				<p>Plugin for CSS animated page transitions. See more on <a href="http://git.blivesta.com/animsition/" target="_blank">git.blivesta.com/animsition/</a>.</p>
+				<h4>functions.js</h4>
+				<p>This is a user's javascript file with main function like different calling plugins and some own scripts. File has 6 sections:</p>
+				<ol>
+					<li>Dropdown Menu</li>
+					<li>Project Carousel</li>
+					<li>Project Gallery</li>
+					<li>Contact Form</li>
+					<li>Animsition</li>
+					<li>Isotope</li>
+				</ol>
+				<h4>Dropdown Menu</h4>
+				<p>Script that responsible for open or close dropdown menu in sidebar.</p>
+				<img class="screenshot" src="img/dropdown-menu.png" alt="">
+				<div class="code-snippet">
+					<h6>dropdown menu</h6>
+					<pre><code class="js">var dropdownMenu = function() {
+	$('#sidebar nav ul .dropdown &gt; span').on('click', function() {
+		var $parent = $(this).parent();
+		if (!$parent.hasClass('expanded')) {
+			$('#sidebar nav ul .dropdown').removeClass('expanded');
+			$('#sidebar nav ul .dropdown &gt; ul').slideUp(300);
+			$parent.find('&gt; ul').slideDown(300);
+			$parent.addClass('expanded');
+		} else {
+			$parent.removeClass('expanded');
+			$parent.find('&gt; ul').slideUp(300);
+		}
+	});
+}</code></pre>
+				</div>
+				<p>It's just add or remove class <span class="selector">.expanded</span> to a parent element when user click.</p>
+				<h4>Project Carousel</h4>
+				<p>Call Boostrap carousel for project page. See more on <a href="http://getbootstrap.com/javascript/#carousel" target="_blank">getbootstrap.com/javascript/#carousel</a>.</p>
+				<div class="code-snippet">
+					<h6>project carousel</h6>
+					<pre><code class="js">var projectCarousel = function() {
+	$('#project-page #project-carousel').carousel();
+}</code></pre>
+				</div>
+				<h4>Project Gallery</h4>
+				<p>Call Magnific Popup gallery for project page alt. See more on<a href="http://dimsemenov.com/plugins/magnific-popup/" target="_blank">dimsemenov.com/plugins/magnific-popup/</a>.</p>
+				<div class="code-snippet">
+					<h6>project gallery</h6>
+					<pre><code class="js">var projectGallery = function() {
+	$('#project-page .gallery').magnificPopup({
+		delegate: 'a',
+		type: 'image',
+		closeOnContentClick: false,
+		closeBtnInside: false,
+		mainClass: 'mfp-with-zoom mfp-img-mobile',
+		image: {
+			verticalFit: true
+		},
+		gallery: {
+			enabled: true
+		},
+		zoom: {
+			enabled: true,
+			duration: 300,
+			opener: function(element) {
+				return element.find('img');
+			}
+		}
+	});
+}</code></pre>
+				</div>
+				<h4>Contact Form</h4>
+				<p>Function that responsible for the contact form. This function check if all fields of feedback form not empty. If not empty, function create variable called <span class="selector">postData</span> and send this data to <span class="selector">php/mail.php</span> file.
+					Then this function wait for response and show message.</p>
+				<div class="code-snippet">
+					<h6>contact form</h6>
+					<pre><code class="js">var contactForm = function() {
+	var inputName = $('#contact-name');
+	var inputEmail = $('#contact-email');
+	var inputSubject = $('#contact-subject');
+	var inputMessage = $('#contact-message');
+	$('#contact-page #submit').on('click', function() {
+		var name = inputName.val();
+		var email = inputEmail.val();
+		var subject = inputSubject.val();
+		var message = inputMessage.val();
+		var valid = true;
+
+		if (name == '') {
+			inputName.addClass('invalid');
+			valid = false;
+		}
+
+		if (email == '') {
+			inputEmail.addClass('invalid');
+			valid = false;
+		}
+
+		if (message == '') {
+			inputMessage.addClass('invalid');
+			valid = false;
+		}
+
+		var postData = {
+			'name': name,
+			'email': email,
+			'subject': subject,
+			'message': message
+		};
+
+		if (valid) {
+			$.post('php/mail.php', postData, function(response) {
+				$('#contact-page #form-error, #contact-page #form-success').empty();
+				for (var i = 0, n = response.length; i &lt; n; i++) {
+					if (response[i].status == 0) {
+						$('#contact-page #message .error').append('&lt;p&gt;' + response[i].message + '&lt;/p&gt;');
+						$('#contact-' + response[i].field).addClass('invalid');
+					}
+
+					if (response[i].status == 1) {
+						$('#contact-page #message .success').append('&lt;p&gt;' + response[i].message + '&lt;/p&gt;');
+					}
+				}
+			}, 'json');
+		}
+		return false;
+	});
+
+	$('#contact-page form input, #contact-page form textarea').on('keyup', function() {
+		$(this).removeClass('invalid');
+	});
+}</code></pre>
+				</div>
+				<h4>Animsition</h4>
+				<p>Call plugin for CSS animated page transitions. See more on <a href="http://git.blivesta.com/animsition/" target="_blank">git.blivesta.com/animsition/</a>.</p>
+				<div class="code-snippet">
+					<h6>animsition</h6>
+					<pre><code class="js">var animsition = function() {
+	$('.global-outer').animsition({
+		inClass: 'fade-in',
+		outClass: 'fade-out',
+		inDuration: 400,
+		outDuration: 400,
+		linkElement: '.smooth-leave',
+		loading: true,
+		loadingParentElement: 'body',
+		loadingClass: 'animsition-loading',
+		loadingInner: '',
+		timeout: false,
+		timeoutCountdown: 5000,
+		onLoadEvent: true,
+		browser: [
+			'animation-duration',
+			'-webkit-animation-duration'
+		],
+		overlay : false,
+		overlayClass : 'animsition-overlay-slide',
+		overlayParentElement : 'body',
+		transition: function(url) {
+			window.location.href = url;
+		}
+	});
+}</code></pre>
+				</div>
+				<h4>Isotope</h4>
+				<p>Call filter and sort layout plugin which used on index pages with portfolio items. See more on <a href="http://isotope.metafizzy.co/" target="_blank">isotope.metafizzy.co</a>.</p>
+				<div class="code-snippet">
+					<h6>isotope</h6>
+					<pre><code class="js">var isotope = function() {
+	var $grid = $('#works-grid');
+	var $filter = $('#works-filter');
+
+	$grid.imagesLoaded(function() {
+		$grid.isotope({
+			itemSelector: '.works-item',
+			masonry: {
+				gutter: '.gutter'
+			}
+		});
+	});
+
+	$filter.find('ul li').on('click', function() {
+		$filter.find('ul li').removeClass('active');
+		$(this).addClass('active');
+		var category = $(this).attr('data-filter');
+		$grid.isotope({
+			filter: category
+		});
+		return false;
+	});
+}</code></pre>
+				</div>
+				<p class="bottom-page">If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="https://themeforest.net/user/rmmr?ref=rmmr" target="_blank">here</a>. Thanks so much!</p>
+			</div>
+		</main>
+	</div>
+	<script src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/highlight.min.js"></script>
+	<script src="js/functions.js"></script>
+</body>
+
+</html>
