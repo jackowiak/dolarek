@@ -1,0 +1,31 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "gulp": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-html-prettify": "^0.0.1",
+    "gulp-imagemin": "^9.1.0",
+    "gulp-notify": "^5.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-stylus": "^3.0.1",
+    "gulp-tinypng": "^1.0.2",
+    "gulp-uncss": "^1.0.6",
+    "perfectionist": "^2.4.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.3"
+  }
+}
