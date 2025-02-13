@@ -1,0 +1,94 @@
+extends layout/head
+block title
+	title SONEX – Blog
+block content
+	body#blog-single
+		.global-outer
+			.global-inner
+				header#sidebar
+					.sidebar-inner
+						include layout/navigation
+						.widgets-block
+							include layout/widgets/search
+							include layout/widgets/blog-categories
+							include layout/widgets/tags
+						include layout/copyright
+				main#main
+					.main-outer
+						.container-fluid
+							.row
+								.col-md-12
+									article
+										.title-image
+											img(src='http://placehold.it/1000x465' alt='')
+										.article-top
+											h2 Design Better Forms
+											ul
+												li.author Ted Ross
+												li.time 15 July 2016
+												li.categories
+													ul
+														li
+															a(href='#') Branding
+														li
+															a(href='#') Podcast
+										.article-text
+											p.lead
+												| Donec fringilla pharetra enim, eu vestibulum ligula. Nulla nibh dolor, eleifend vitae dolor vitae, fringilla tincidunt arcu. Sed sagittis magna id tortor interdum scelerisque. Curabitur quis neque sit amet magna vehicula interdum. Vivamus non commodo nunc.
+											p
+												| Donec interdum, nisi at euismod rhoncus, ligula sem ornare nisi, sed scelerisque mauris turpis in lorem. Suspendisse porttitor ultrices viverra. Aenean et viverra justo. Aliquam erat volutpat. Nullam rhoncus sed sem eget tempor. Aliquam lacus diam, condimentum id sem nec, faucibus molestie diam. Maecenas mattis lectus id metus iaculis tempor. Donec in ex nisi. Curabitur dictum, lectus sed dignissim rhoncus, 
+												a(href='#') enim
+												|  nisl commodo ex, porttitor mollis augue dui ac urna. Praesent facilisis ante mauris, ac luctus velit imperdiet vel. Nam ultricies ipsum id ornare consequat. Donec id tristique mauris. Fusce lectus tellus, pretium sit amet ante vel, faucibus pharetra sem. Aliquam placerat felis sem, ut varius tellus viverra ac.
+											blockquote
+												| Integer id imperdiet nulla, et molestie nunc. Mauris vitae vulputate magna. Donec augue dolor, mollis convallis nisi sed, suscipit rhoncus velit. Donec eget congue justo.
+											p
+												| Vestibulum augue arcu, tincidunt nec ante at, feugiat vehicula turpis. Aliquam eu leo ipsum. Aenean tincidunt pharetra est porta gravida. Aenean a turpis tristique, facilisis nisl quis, ornare massa. Donec commodo mattis facilisis. Morbi sit amet nisi quis sapien sagittis viverra vitae vitae dui. Nullam tempor sagittis facilisis.
+											p
+												| Quisque ornare risus vitae velit aliquam dapibus. Etiam ipsum lorem, feugiat a ipsum nec, eleifend gravida libero. Cras pharetra lectus eget dolor molestie volutpat. Etiam viverra hendrerit metus non consequat.
+							.row
+								.end-page
+									.col-sm-3
+										a.articles-navigation.previous-article(href='#')
+											.arrow.arrow-left
+									.col-sm-6
+										.share-block
+											ul
+												each i in ['facebook', 'twitter', 'vkontakte', 'gplus', 'pinterest-circled', 'mail-alt']
+													li
+														a(class='icon-' + i, href='#')
+									.col-sm-3
+										a.articles-navigation.next-article(href='#')
+											.arrow.arrow-right
+							.row
+								.col-md-12
+									.comments
+										.comments-list
+											h3 Comments
+											mixin comment(reply, photo, name, comment)
+												div(class='comment ' + reply)
+													.row
+														.col-md-8
+															.user-photo
+																img(src=photo, alt='')
+															.content
+																h4=name
+																small.time 15 July 2016
+																p=comment
+																a.reply(href='#') Reply
+											+comment('', 'http://placehold.it/90x90', 'Eric', 'Fusce at justo magna. Pellentesque ut libero blandit, pretium urna vitae, dictum tortor.')
+											+comment('reply', 'http://placehold.it/90x90', 'Kendall', 'Donec gravida rhoncus ipsum eget accumsan. Curabitur commodo quis tellus nec dapibus.')
+											+comment('', 'http://placehold.it/90x90', 'Richard', 'Nulla ut dui ut diam finibus euismod. Donec vel congue turpis, vehicula ullamcorper nunc.')
+										.leave-comment
+											h3 Leave Comment
+											.row
+												.col-md-12
+													form
+														.row
+															.col-sm-6
+																input(type='text' placeholder='Name' name='comments-name')
+															.col-sm-6
+																input(type='text' placeholder='Email' name='comments-email')
+														textarea(placeholder='Comment' name='comments-comment')
+														a.btn(href='#') Leave Comment
+
+		include layout/js

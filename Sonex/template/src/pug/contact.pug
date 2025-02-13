@@ -1,0 +1,110 @@
+extends layout/head
+block title
+	title SONEX – Contact
+block content
+	body#contact-page
+		.global-outer
+			.global-inner
+				header#sidebar
+					.sidebar-inner
+						include layout/navigation
+						.widgets-block
+							include layout/widgets/twitter
+						include layout/copyright
+				main#main
+					.main-outer
+						.container-fluid
+							.page-title
+								.row
+									.col-md-8
+										h1 Contact
+										p.lead
+											| We are happy about collaboration with creative people and organizations to provide best design.
+									.col-md-12
+										#google-map
+								.offices-information
+									.row
+										.col-md-8
+											h2 Offices
+											p.lead
+												| We have four offices around Ukraine. Each of them is located in center of city. So, you don't need to search us, we are always close to you.
+											p
+												| Cras tincidunt, sapien at pretium fermentum, enim tellus elementum mi, sed dignissim turpis neque at elit. Sed ut aliquam ipsum, vitae aliquet velit.
+								.offices-list
+									.row
+										.col-md-3
+											.office-block
+												h4 Kirovograd
+												p
+													| 1570 Kildeer Drive<br>Frankfort, OH 45628
+													<br>
+													a.phone(href='tel:+30661234567') +30661234567
+													<br>
+													a(href='#') kr@sonex.com
+										.col-md-3
+											.office-block
+												h4 Kyiv
+												p
+													| 1144 Ben Street<br>East Lansing, MI 48823 
+													<br>
+													a.phone(href='tel:+30957654321') +30957654321
+													<br>
+													a(href='#') kyiv@sonex.com
+										.col-md-3
+											.office-block
+												h4 Odessa
+												p
+													| 2607 Locust Court<br>Artesia, CA 90701
+													<br>
+													a.phone(href='tel:+30507842168') +30507842168
+													<br>
+													a(href='#') od@sonex.com
+										.col-md-3
+											.office-block
+												h4 Lviv
+												p
+													| 722 Spruce Drive<br>Bridgeville, PA 15017 
+													<br>
+													a.phone(href='tel:+30975413287') +30975413287
+													<br>
+													a(href='#') lviv@sonex.com
+								.say-hello
+									.row
+										.col-md-8
+											h2 Say Hello!
+											p.lead
+												| We are happy about collaboration with creative people and organizations to provide best design.
+									.row
+										.col-md-12
+											form
+												.row
+													.col-sm-6
+														input#contact-name(type='text' name='contact-name' placeholder='Name')
+													.col-sm-6
+														input#contact-email(type='text' name='contact-email' placeholder='Email')
+												input#contact-subject(type='text' name='contact-subject' placeholder='Subject')
+												textarea#contact-message(name='contact-message' placeholder='Message')
+												a#submit.btn(href='#') Send Message
+												#message
+													.error
+													.success
+		include layout/js
+		script(type='text/javascript').
+			function initMap() {
+				var mapOptions = {
+					scrollwheel: false,
+					zoom: 15,
+					disableDefaultUI: true,
+					center: new google.maps.LatLng(48.507664, 32.268486),
+					styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
+				};
+				var mapElement = document.getElementById('google-map');
+				var map = new google.maps.Map(mapElement, mapOptions);
+				var marker = new google.maps.Marker({
+					position: new google.maps.LatLng(48.507664, 32.268486),
+					map: map,
+					icon: 'img/map-marker.png',
+					title: 'Sonex'
+				});
+			}
+		script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAX8G3RzmOAIGGMxZSXqxSkuc2UIs0QpLQ&callback=initMap")

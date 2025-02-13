@@ -1,0 +1,67 @@
+extends layout/head
+block title
+	title SONEX – Blog
+block content
+	body#blog-page
+		.global-outer
+			.global-inner
+				header#sidebar
+					.sidebar-inner
+						include layout/navigation
+						.widgets-block
+							include layout/widgets/search
+							include layout/widgets/blog-categories
+							include layout/widgets/tags
+						include layout/copyright
+				main#main
+					.main-outer
+						.container-fluid
+							.page-title
+								.row
+									.col-md-8
+										h1 Blog
+										p.lead
+											| Read about our studio life, our thoughts, advice of professionals, as well as listen to podcasts.
+									.col-md-12
+										.page-title-image
+											img(src='http://placehold.it/1000x465' alt='')
+							.articles-list
+								mixin article(title, author, categories)
+									article
+										.row
+											.col-md-12
+												a.post.smooth-leave(href='blog-single.html')
+													.content
+														h2=title
+														ul
+															li.author=author
+															li.categories
+																ul
+																	each i in categories
+																		li=i
+													.arrow
+								+article('Design for Humanity', 'Ted Ross', ['Branding', 'Podcast'])
+								+article('The Ideal Design Workflow', 'Helen Clark', ['Illustrations', 'Podcast'])
+								+article('Why Product Thinking is the next big thing in UX Design', 'Robert Briggs', ['Design', 'Creative'])
+								+article('Design Better Forms', 'Maria Burton', ['Photography', 'Podcast'])
+								+article('The Day You Became A Better Designer', 'Daniel Frates', ['UX/UI', 'Tips'])
+								+article('Great Books for Designers to Read in 2016', 'Dawm Williams', ['Tips'])
+							.row
+								.end-page
+									.col-sm-3
+										a.pages-navigation.previous-page(href='#')
+											.arrow.arrow-left
+									.col-sm-6
+										ul.pagination
+											li.current 1
+											li
+												a(href='#') 2
+											li
+												a(href='#') 3
+											li …
+											li
+												a(href='#') 10
+									.col-sm-3
+										a.pages-navigation.next-page(href='#')
+											.arrow.arrow-right
+		include layout/js

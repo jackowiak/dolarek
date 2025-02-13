@@ -1,0 +1,85 @@
+extends layout/head
+block title
+	title SONEX – Project
+block content
+	body#project-page
+		.global-outer
+			.global-inner
+				header#sidebar
+					.sidebar-inner
+						include layout/navigation
+						.widgets-block
+							include layout/widgets/search
+							include layout/widgets/recent-projects
+						include layout/copyright
+				main#main
+					.main-outer
+						.container-fluid
+							.row
+								.col-md-12
+									.title-image
+										img(src='http://placehold.it/900x500' alt='')
+							.row
+								.col-md-9
+									.description
+										h1 Podantic
+										ul.categories
+											li Typography
+											li Branding
+										p
+											| Integer dictum sapien ac sapien elementum tincidunt. Fusce auctor diam at lorem mollis pretium in ac dolor. Praesent iaculis nunc et velit porttitor, et venenatis enim sodales.
+										p
+											| Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed accumsan tellus id pharetra rhoncus. Ut non tincidunt turpis, quis aliquet metus.
+								.col-md-3
+									.details
+										ul
+											li
+												| Date:
+												span July 2016
+											li
+												| Client:
+												span Rom Mar
+											li
+												| Budget:
+												span $3000
+											li
+												| Art Director:
+												span John Doe
+							.row
+								.col-md-6
+									.project-image
+										.caption First Mockup
+										img(src='http://placehold.it/800x530' alt='')
+								.col-md-6
+									.project-image
+										.caption Second Mockup
+										img(src='http://placehold.it/800x530' alt='')
+							.row
+								.col-md-12
+									#project-carousel.carousel.slide
+										ol.carousel-indicators
+											li.active(data-target='.carousel' data-slide-to='0')
+											li(data-target='.carousel' data-slide-to='1')
+											li(data-target='.carousel' data-slide-to='2')
+										.carousel-inner
+											.item.active
+												img(src='http://placehold.it/900x500' alt='')
+											.item
+												img(src='http://placehold.it/900x500' alt='')
+											.item
+												img(src='http://placehold.it/900x500' alt='')
+							.row
+								.end-page
+									.col-sm-3
+										a.projects-navigation.previous-project(href='#')
+											.arrow.arrow-left
+									.col-sm-6
+										.share-block
+											ul
+												each i in ['facebook', 'twitter', 'vkontakte', 'gplus', 'pinterest-circled', 'mail-alt']
+													li
+														a(class='icon-' + i, href='#')
+									.col-sm-3
+										a.projects-navigation.next-project(href='#')
+											.arrow.arrow-right
+		include layout/js

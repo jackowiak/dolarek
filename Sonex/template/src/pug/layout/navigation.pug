@@ -1,0 +1,25 @@
+a.logo.smooth-leave(href='index.html')
+	img(src='img/logo.png' alt='SO')
+p.intro
+	| A small team of designers based in Kirovograd, UA. See our latest projects and get in touch.
+nav
+	ul
+		mixin link(href, text)
+			li
+				a.smooth-leave(href=href)=text
+		li.dropdown
+			span Work
+			ul
+				+link('index-columns-2.html', '2 Columns')
+				+link('index.html', '3 Columns')
+				+link('index-columns-4.html', '4 Columns')
+				+link('project-page.html', 'Project Page')
+				+link('project-page-alt.html', 'Project Page Alt')
+		+link('about.html', 'About')
+		li.dropdown
+			span Blog
+			ul
+				+link('blog.html', 'Posts List')
+				+link('blog-alt.html', 'Posts List Alt')
+				+link('blog-single.html', 'Single Post')
+		+link('contact.html', 'Contact')

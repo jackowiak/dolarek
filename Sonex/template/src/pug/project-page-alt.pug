@@ -1,0 +1,60 @@
+extends layout/head
+block title
+	title SONEX – Project
+block content
+	body#project-page.alternative
+		.global-outer
+			.global-inner
+				header#sidebar
+					.sidebar-inner
+						include layout/navigation
+						.widgets-block
+							include layout/widgets/search
+							include layout/widgets/recent-projects
+						include layout/copyright
+				main#main
+					.main-outer
+						.container-fluid
+							.row
+								.col-md-5
+									.gallery
+										a(href='http://placehold.it/500x500')
+											img(src='http://placehold.it/500x500')
+										a(href='http://placehold.it/500x500')
+											img(src='http://placehold.it/500x500')
+										a(href='http://placehold.it/500x500')
+											img(src='http://placehold.it/500x500')
+								.col-md-6.col-md-offset-1
+									.description
+										h1 Racé
+										ul.categories
+											li Typography
+											li Branding
+										p
+											| Integer dictum sapien ac sapien elementum tincidunt. Fusce auctor diam at lorem mollis pretium in ac dolor. Praesent iaculis nunc et velit porttitor, et venenatis enim sodales.
+										p
+											| Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed accumsan tellus id pharetra rhoncus. Ut non tincidunt turpis, quis aliquet metus.
+										.row
+											.col-md-6
+												h5.subtitle approach
+												p
+													| Interdum et malesuada fames ac ante ipsum primis in faucibus.
+											.col-md-6
+												h5.subtitle goals
+												p
+													| Nunc molestie faucibus nunc, ut ullamcorper augue ultricies vitae.
+									.row
+										.end-page
+											.col-sm-3
+												a.projects-navigation.previous-project(href='#')
+													.arrow.arrow-left
+											.col-sm-6
+												.share-block
+													ul
+														each i in ['facebook', 'twitter', 'vkontakte', 'gplus']
+															li
+																a(class='icon-' + i, href='#')
+											.col-sm-3
+												a.projects-navigation.next-project(href='#')
+													.arrow.arrow-right
+		include layout/js

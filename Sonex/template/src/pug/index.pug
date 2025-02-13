@@ -1,0 +1,48 @@
+extends layout/head
+block title
+	title SONEX – Home
+block content
+	body#index-page
+		.global-outer
+			.global-inner
+				header#sidebar
+					.sidebar-inner
+						include layout/navigation
+						.widgets-block
+							include layout/widgets/works-filter
+						include layout/copyright
+				main#main
+					.main-outer
+						.container-fluid
+							.row
+								.col-md-12
+									#works-grid
+										.gutter
+										mixin works-item(title, categories, list, img)
+											a(class='works-item smooth-leave ' + categories, href='project-page.html')
+												.picture
+													.content
+														.text
+															h2=title
+															ul
+																each val in list
+																	li=val
+													img(src=img, alt='')
+										+works-item('Mutualismi', 'typography illustration', ['Typography', 'Illustration'], 'http://placehold.it/500x500')
+										+works-item('Genuine American Fortune Cookies', 'branding', ['Branding'], 'http://placehold.it/500x500')
+										+works-item('Moth Magazine', 'typography branding', ['Typography', 'Branding'], 'http://placehold.it/500x500')
+										+works-item("The World's Smallest Portfolio", 'illustration', ['Illustration'], 'http://placehold.it/500x600')
+										+works-item("BNF Magazine", 'branding', ['Branding'], 'http://placehold.it/500x500')
+										+works-item('Rent the Runway New Packaging', 'branding', ['Branding'], 'http://placehold.it/500x600')
+										+works-item('勾勾 GOGO', 'typography', ['Typography'], 'http://placehold.it/500x500')
+										+works-item('London', 'illustration typography', ['Illustration', 'Typography'], 'http://placehold.it/500x700')
+										+works-item('Fika', 'branding', ['Branding'], 'http://placehold.it/500x500')
+										+works-item('Hana', 'branding', ['Branding'], 'http://placehold.it/500x500')
+										+works-item('Branding Miss Events', 'illustration branding', ['Illustration', 'Branding'], 'http://placehold.it/500x600')
+										+works-item('Viliv Identity', 'typography illustration', ['Typography', 'Illustration'], 'http://placehold.it/500x500')
+										+works-item('Stay Hungry Stay Foolish', 'typography', ['Typography'], 'http://placehold.it/500x500')
+								.row
+									.col-md-12
+										.load-more
+											a.btn(href='#') Load More Projects
+		include layout/js

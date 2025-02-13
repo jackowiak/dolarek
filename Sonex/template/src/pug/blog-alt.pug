@@ -1,0 +1,68 @@
+extends layout/head
+block title
+	title SONEX – Blog
+block content
+	body#blog-page.alternative
+		.global-outer
+			.global-inner
+				header#sidebar
+					.sidebar-inner
+						include layout/navigation
+						.widgets-block
+							include layout/widgets/search
+							include layout/widgets/blog-categories
+							include layout/widgets/tags
+						include layout/copyright
+				main#main
+					.main-outer
+						.container-fluid
+							.page-title
+								.row
+									.col-md-8
+										h1 Blog
+										p.lead
+											| Read about our studio life, our thoughts, advice of professionals, as well as listen to podcasts.
+							.articles-list
+								mixin article(image, title, author, categories, text)
+									article
+										.row
+											.col-md-12
+												a.image.smooth-leave(href='blog-single.html')
+													i.icon-eye
+													img(src=image, alt='')
+												.content
+													a.title.smooth-leave(href='blog-single.html')
+														h2=title
+													ul
+														li.author=author
+														li.categories
+															ul
+																each i in categories
+																	li
+																		a(href='#')=i
+													p=text
+													a.read-more(href='blog-single.html') Read More
+								+article('http://placehold.it/1000x465', 'Design for Humanity', 'Ted Ross', ['Branding', 'Podcast'], 'Donec nulla tortor, commodo vitae blandit sit amet, posuere eu sem. Pellentesque viverra congue mauris, vitae tincidunt lorem eleifend scelerisque. Nulla ut ornare est. Cras gravida efficitur felis, eu tempus elit cursus et. Duis ultrices, turpis eget venenatis aliquam, diam neque efficitur risus, tincidunt efficitur felis ante eu justo. Proin lobortis libero at elit fringilla vehicula. Vestibulum a neque finibus purus tempus auctor.')
+								+article('http://placehold.it/1000x465', 'The Ideal Design Workflow', 'Helen Clark', ['Illustrations', 'Podcast'], 'Aenean felis sapien, vestibulum interdum lorem ac, ultricies ornare turpis. In scelerisque tellus sollicitudin ipsum egestas ultrices. Suspendisse nec dui ut diam gravida pretium. Etiam quis dui placerat, auctor dolor porta, convallis velit. Vivamus tincidunt, nibh ut tempor condimentum, sapien velit tempor magna, sed lacinia felis ligula quis sem. Nullam lacus massa, pulvinar non molestie id, rhoncus eget lorem. Sed nec consectetur lectus.')
+								+article('http://placehold.it/1000x465', 'Why Product Thinking is the next big thing in UX Design', 'Robert Briggs', ['Design', 'Creative'], 'Vivamus ac pharetra dui. Sed viverra ex ex, at bibendum turpis efficitur eu. Nullam pellentesque posuere lectus, eget finibus arcu tempor sed. Integer interdum purus ultrices risus sodales tempus. Fusce scelerisque sapien in tellus auctor pretium. Curabitur suscipit nisi ante, quis eleifend sem scelerisque vel. Sed posuere felis vitae ante tristique pellentesque. Nullam placerat pharetra luctus. Duis porta dui sit amet nibh fermentum scelerisque.')
+								+article('http://placehold.it/1000x465', 'Design Better Forms', 'Maria Burton', ['Photography', 'Podcast'], 'Nunc eu lectus sed risus molestie commodo eu sit amet augue. Cras porttitor purus convallis leo cursus ultrices. Phasellus sagittis dapibus lorem, vel ornare metus condimentum id. Morbi ac orci a tellus ornare iaculis at ac tellus. Nulla semper sollicitudin ante et commodo. Cras ac mi et augue rhoncus posuere vitae ut ligula. Suspendisse potenti. Nullam ac purus non leo porttitor aliquam et a libero. Donec hendrerit aliquam ipsum nec cursus.')
+								+article('http://placehold.it/1000x465', 'The Day You Became A Better Designer', 'Daniel Frates', ['UX/UI', 'Tips'], 'Phasellus sagittis consectetur ipsum et lobortis. Curabitur feugiat at nunc vitae sagittis. Praesent vitae velit ac felis suscipit rutrum eget vel lectus. Phasellus massa leo, iaculis ac dignissim at, bibendum sed quam. Nunc orci dolor, laoreet sed nisl nec, consectetur malesuada mauris. Suspendisse vel quam imperdiet, auctor metus eget, maximus mi. Suspendisse venenatis leo non interdum dictum. Integer quis nunc vel ante porttitor semper.')
+								.row
+									.end-page
+										.col-sm-3
+											a.pages-navigation.previous-page(href='#')
+												.arrow.arrow-left
+										.col-sm-6
+											ul.pagination
+												li.current 1
+												li
+													a(href='#') 2
+												li
+													a(href='#') 3
+												li …
+												li
+													a(href='#') 10
+										.col-sm-3
+											a.pages-navigation.next-page(href='#')
+												.arrow.arrow-right
+		include layout/js

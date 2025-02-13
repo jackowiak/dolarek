@@ -1,0 +1,86 @@
+extends layout/head
+block title
+	title SONEX – About
+block content
+	body#about-page
+		.global-outer
+			.global-inner
+				header#sidebar
+					.sidebar-inner
+						include layout/navigation
+						.widgets-block
+							include layout/widgets/twitter
+						include layout/copyright
+				main#main
+					.main-outer
+						.container-fluid
+							.page-title
+								.row
+									.col-md-8
+										h1 About
+										p.lead
+											| We are Sonex Studio, a small team of designers based in Kirovograd, that create nice looking designs.
+									.col-md-12
+										.page-title-image
+											img(src='http://placehold.it/1000x465' alt='')
+							.studio
+								.row
+									.col-md-8
+										h2 The Studio
+										p.lead
+											| We have many years experience and many interesting problems which we solved. We are happy about collaboration with creative people and organizations to provide best design.
+										p
+											| Suspendisse pellentesque nisi dui, sodales consequat dolor ullamcorper non. Integer malesuada elit sapien, sed volutpat justo maximus non.
+							.services
+								.row
+									mixin service-block(title, para)
+										.col-md-3
+											.service-block
+												h4=title
+												p=para
+									+service-block('Typography', 'Phasellus maximus felis purus, eget maximus ligula scelerisque id.')
+									+service-block('Branding', 'Etiam risus metus, vehicula gravida elementum in, mollis ut ipsum.')
+									+service-block('Identity', 'Quisque vulputate orci in ipsum ultrices, vel volutpat quam sagittis.')
+									+service-block('Illustrations', 'Nullam sit amet libero id augue tincidunt pretium pharetra eu lorem.')
+							.approach
+								.row
+									.col-md-5
+										img(src='http://placehold.it/500x600' alt='')
+									.col-md-6.col-md-offset-1
+										.text
+											h2 Our Approach
+											p
+												| We believe that design it's a first thing the user sees. So, we care about true solutions and we will focus only on the client's problem. We love our clients and make them happy.
+											ul.links
+												li
+													a.smooth-leave(href='index.html') Our Cases
+												li
+													a.smooth-leave(href='contact.html') Contact Us
+							.team
+								.row
+									.col-md-12
+										.team-title
+											h2 The Team
+											p
+												| Meet talented team of creatives, fun-lovers, and magic makers.
+								mixin team-member(photo, name, post)
+									.col-md-4
+										.team-member
+											.photo
+												img(src=photo, alt='')
+											.content
+												h3=name
+												p=post
+												ul.social-links
+													each i in ['facebook', 'twitter', 'gplus']
+														li
+															a(class='icon-' + i, href='#')
+								.row
+									+team-member('http://placehold.it/400x400', 'Ted Ross', 'Founder & Creative Director')
+									+team-member('http://placehold.it/400x400', 'Helen Clark', 'Lead Designer')
+									+team-member('http://placehold.it/400x400', 'Robert Briggs', 'Senior Designer')
+								.row
+									+team-member('http://placehold.it/400x400', 'Maria Burton', 'Brand & UI Designer')
+									+team-member('http://placehold.it/400x400', 'Daniel Frates', 'UX/UI Strategist')
+									+team-member('http://placehold.it/400x400', 'Dawm Williams', 'Office Manager')
+		include layout/js

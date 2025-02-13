@@ -1,0 +1,1407 @@
+$black 		= #000000
+$white 		= #ffffff
+$main 		= #48ba86
+$header 	= #0e0e0e
+$para 		= #6d6d6d
+$grey 		= #bfbfbf
+
+/*
+	Contents:
+	1. Google Fonts Import
+	2. Common Styles
+	3. Sidebar
+	4. Main
+	5. Works Grid
+	6. Index Page
+	7. Project Page
+	8. About Page
+	9. Blog Page
+	10. Blog Single
+	11. Contact Page
+	12. Responsive
+*/
+
+/*
+	1. Google Fonts Import
+*/
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400'
+@import 'https://fonts.googleapis.com/css?family=Lora:400,400italic'
+
+/*
+	2. Common Styles
+*/
+body
+	font-family 'Roboto', 'Tahoma', 'Arial', sans-serif
+	font-weight 300
+
+.global-outer
+	width 100%
+	max-width 1440px
+	margin-left auto
+	margin-right auto
+	overflow hidden
+	position relative
+	opacity 0
+	animation-fill-mode both
+	.global-inner
+		padding 60px
+		overflow hidden
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+	font-weight 300
+	line-height 1.8
+	color $header
+	font-family 'Lora', serif
+
+h1
+	font-size 36px
+
+h2
+	font-size 28px
+
+h3
+	font-size 22px
+	
+h4
+	font-size 18px
+
+h5
+	font-size 16px
+
+h6
+	font-size 12px
+
+p
+	font-size 15px
+	line-height 1.8
+	color $para
+	&.lead
+		font-size 19px
+
+a
+	color $main
+	border-bottom 1px solid alpha($main, 0)
+	padding-bottom 1px
+	transition color 200ms, border-color 200ms
+	&:hover,
+	&:active,
+	&:focus
+		color darken($main, 15)
+		text-decoration none
+		border-color alpha($main, 0.3)
+	&:focus
+		outline none
+		
+ul
+	font-size 15px
+	color $para
+
+blockquote
+	font-size 18px
+	font-family 'Lora'
+	font-style italic
+	line-height 2
+	padding-top 15px
+	padding-bottom 15px
+	color alpha($para, 0.7)
+
+input,
+textarea
+	display block
+	width 100%
+	max-width 100%
+	border none
+	background-color alpha($black, 0.04)
+	padding 10px
+	font-size 13px
+	border-radius 2px
+	border-bottom 1px solid transparent
+	transition background-color 200ms, border-color 300ms, border-radius 100ms
+	box-sizing border-box
+	&:focus
+		background-color $white
+		border-radius 0
+		border-color alpha($black, 0.08)
+
+.btn
+	display inline-block
+	text-align center
+	margin auto
+	background-color $main
+	color $white
+	font-size 13px
+	border-radius 2px
+	padding 8px 14px
+	transition background-color 200ms
+	&:hover
+		background-color darken($main, 10)
+		color $white
+	&:active
+		background-color darken($main, 15)
+	&:focus
+		color $white
+	&.small
+		padding 5px 10px
+	&.large
+		padding 12px 18px
+
+::selection
+	background-color $main
+	color $white
+
+.carousel
+	position relative
+	overflow hidden
+	&:after
+		content ''
+		position absolute
+		bottom -55px
+		left 0
+		display block
+		width 100%
+		height 55px
+		box-shadow inset 0 -50px 50px -50px alpha($black, 0.5)
+		transition bottom 300ms
+	.carousel-indicators
+		bottom 0
+		li
+			position relative
+			display inline-block
+			width 10px
+			height 10px
+			border-radius 10px
+			margin 0 3px
+			border 1px solid $white
+			overflow hidden
+			transform translateY(100%)
+			opacity 0
+			for i in (1..15)
+				&:nth-child({i})
+					transition transform 200ms (i * 100)ms, opacity 200ms (i * 100)ms
+			&:before
+				content ''
+				position absolute
+				top 0
+				left 0
+				width 0
+				height 100%
+				background-color $white
+				transition width 300ms
+			&.active
+				width 10px
+				height 10px
+				background-color transparent
+				&:before
+					width 100%
+			&:hover
+				&:before
+					width 100%
+	&:hover
+		&:after
+			bottom 0
+		.carousel-indicators
+			li
+				transform translateY(0)
+				opacity 1
+
+.image-source-link
+	color #98C3D1
+
+.mfp-with-zoom
+	&.mfp-container,
+	&.mfp-bg
+		opacity 0
+		transition all 300ms ease-out
+		backface-visibility hidden
+	&.mfp-ready
+		.mfp-container
+			opacity 1
+		&.mfp-bg
+			opacity 0.8
+	&.mfp-removing
+		.mfp-container
+			opacity 0
+		&.mfp-bg
+			opacity 0
+
+.page-title
+	h1
+		margin 0
+		line-height 1
+	p
+		margin-top 25px
+	.page-title-image
+		margin-top 30px
+		img
+			width 100%
+/*
+	3. Sidebar
+*/
+#sidebar
+	width 25%
+	float left
+	overflow hidden
+	.sidebar-inner
+		padding-right 30px
+	.logo
+		display inline-block
+		margin-bottom 30px
+		padding 0
+		border none
+	nav
+		padding 25px 0 10px
+		color $header
+		ul
+			list-style none
+			margin 0
+			padding 0
+			li
+				a,
+				span
+					display inline-block
+					padding 6px 0
+					color $header
+					text-decoration none
+					transition color 100ms
+					border none
+					font-weight 300
+					&.current
+						color $main
+					&:hover
+						color $main
+						cursor pointer
+						&:before
+							background-color $main
+				&.dropdown
+					span
+						position relative
+						&:after,
+						&:before
+							content ''
+							position absolute
+							top 2px
+							right 0
+							bottom 0
+							margin auto -13px auto auto
+							display inline-block
+							width 7px
+							height 1px
+							background-color $header
+							transition transform 200ms, background-color 100ms
+						&:before
+							margin-right -10px
+							width 1px
+							height 7px
+						&.current
+							&:after,
+							&:before
+								background-color $main
+						&:hover
+							&:after,
+							&:before
+								background-color $main
+					ul
+						display none
+						li
+							transform translateY(-10px)
+							opacity 0
+							for i in (1..10)
+								&:nth-child({i})
+									transition transform 400ms (i * 100)ms, opacity 200ms (i * 100)ms
+							a
+								font-size 13px
+								&:before
+									content ''
+									display inline-block
+									width 4px
+									height 1px
+									background-color $header
+									margin-bottom 4px
+									margin-right 6px
+									transition background-color 100ms
+								&.current
+									&:before
+										background-color $main
+								&:hover
+									&:before
+										background-color $main
+					&.expanded
+						span
+							&:before
+								transform rotate(90deg)
+						ul
+							li
+								transform translateY(0)
+								opacity 1
+								for i in (1..10)
+									&:nth-child({i})
+										transition transform 200ms (i * 100)ms, opacity 200ms (i * 100)ms
+	.basket-open
+		position absolute
+		top 10px
+		right 20px
+		border-bottom none
+		.cart-indicator
+			position relative
+			overflow hidden
+			i
+				font-size 16px
+				color $grey
+				transition color 200ms
+			span
+				position absolute
+				top -5px
+				right -12px
+				display block
+				width 16px
+				height 16px
+				background-color $main
+				border-radius 20px
+				font-size 9px
+				font-weight 400
+				color $white
+				text-align center
+				padding-top 2px
+		&:hover
+			.cart-indicator
+				i
+					color $para
+	.copyright
+		padding-top 20px
+		color $grey
+		font-size 13px
+	.widgets-block
+		margin 50px 0
+		.widget
+			margin 0 0 80px
+			&:last-of-type
+				margin-bottom 0
+			.title
+				display block
+				color $grey
+				margin 0 0 5px
+				font-weight 400
+				font-size 11px
+				letter-spacing 0.4px
+				text-transform uppercase
+				&:after
+					content ''
+					display block
+					width 100%
+					height 1px
+					background-color alpha($grey, 0.12)
+					margin-top 3px
+			ul
+				list-style none
+				margin 0
+				padding 0
+				li
+					display block
+					padding 5px 0
+			&.filter
+				li
+					color $header
+					transition color 100ms
+					&.active
+						color $main
+					&:hover
+						color $main
+						cursor pointer
+			&.twitter
+				ul
+					li
+						line-height 1.7
+						font-size 13px
+						padding 15px 0
+						&:first-child
+							padding-top 0
+						&:last-child
+							padding-bottom 0
+						.time
+							display block
+							margin 7px 0 0
+							color $grey
+							font-size 13px
+							border none
+							&:hover
+								color $main
+			&.recent-projects
+				ul
+					li
+						a
+							display block
+							border none
+							color $para
+							width 100%
+							overflow hidden
+							text-overflow ellipsis
+							white-space nowrap
+							&:hover
+								color $main
+			&.blog-categories
+				ul
+					li
+						a
+							display block
+							border none
+							color $para
+							width 100%
+							overflow hidden
+							text-overflow ellipsis
+							white-space nowrap
+							&:hover
+								color $main
+			&.tags
+				ul
+					li
+						display inline-block
+						margin 5px 0
+						padding 0
+						a
+							display block
+							color $grey
+							border none
+							background-color alpha($grey, 0.1)
+							padding 6px 12px
+							font-size 13px
+							border-radius 150px
+							white-space nowrap
+							transition background-color 200ms, color 200ms
+							&:hover
+								color $para
+								background-color alpha($grey, 0.2)
+
+/*
+	4. Main
+*/
+#main
+	float left
+	overflow hidden
+	width 75%
+	.main-outer
+		overflow hidden
+		padding-left 30px
+
+/*
+	5. Works Grid
+*/
+#works-grid
+	overflow hidden
+	.gutter
+		width 2.35%
+	.works-item
+		display block
+		position relative
+		overflow hidden
+		border none
+		width 31.75%
+		margin-bottom 2.35%
+		padding-bottom 0
+		z-index 3
+		.picture
+			position relative
+			.content
+				position absolute
+				width 100%
+				top 50%
+				left 0
+				transform translateY(-50%)
+				z-index 2
+				.text
+					padding 20px
+					text-align center
+					transform scale(1.2)
+					opacity 0
+					transition transform 250ms, opacity 100ms
+					h2
+						color $white
+						margin 0 0 5px
+						padding 0
+						font-size 19px
+						line-height 1.5
+					ul
+						list-style none
+						margin 0
+						padding 0
+						li
+							display inline
+							color alpha($white, 0.8)
+							font-size 11px
+							font-weight 400
+							&:after
+								content '—'
+								margin-left 3px
+							&:last-child
+								&:after
+									content ''
+									margin 0
+			img
+				width 100%
+			&:before
+				content ''
+				display block
+				width 100%
+				height 100%
+				position absolute
+				top 0
+				left 0
+				transition opacity 250ms
+				opacity 0
+				background-color alpha($black, 0.6)
+				z-index 1
+		&:hover
+			.picture
+				.content
+					.text
+						transform scale(1)
+						opacity 1
+				&:before
+					opacity 1
+	&.columns-2
+		.works-item
+			width 48.825%
+	&.columns-4
+		.works-item
+			width 23.2375%
+
+/*
+	6. Index Page
+*/
+#index-page
+	#main
+		.load-more
+			margin-top 30px
+			text-align center
+
+/*
+	7. Project Page
+*/
+#project-page
+	#main
+		.title-image
+			img
+				width 100%
+		.gallery
+			a
+				display block
+				margin-bottom 20px
+				border-bottom none
+				img
+					width 100%
+		.description
+			margin 50px 0 30px
+			h1
+				margin 0
+			p
+				font-size 15px
+				margin 10px 0 20px
+			.categories
+				list-style none
+				margin -5px 0 35px
+				padding 0
+				li
+					display inline
+					color $grey
+					font-size 13px
+					font-weight 300
+					margin-right 3px
+					&:after
+						content '—'
+						margin-left 5px
+					&:last-child
+						margin-right 0
+						&:after
+							content ''
+							margin-left 0
+			.subtitle
+				margin 50px 0 0
+				font-size 11px
+				letter-spacing 0.4px
+				text-transform uppercase
+				font-weight 400
+				color $header
+				font-family Roboto
+		.details
+			margin 50px 0 30px
+			padding 15px 30px
+			ul
+				list-style none
+				margin 0
+				padding 0
+				li
+					color $grey
+					margin 10px 0
+					padding 5px 0
+					font-size 11px
+					letter-spacing 0.4px
+					text-transform uppercase
+					font-weight 400
+					&:first-child
+						margin-top 0
+						padding-top 0
+					&:last-child
+						margin-bottom 0
+					span
+						display block
+						color $para
+						margin-top 2px
+						text-transform none
+						font-size 13px
+						font-weight 400
+						
+		.project-image
+			position relative
+			margin-top 30px
+			.caption
+				position absolute
+				bottom 15px
+				left 15px
+				display inline-block
+				background-color alpha($white, 0.9)
+				border-radius 2px
+				font-size 13px
+				padding 4px 12px
+				transform scale(1.2)
+				opacity 0
+				transition transform 250ms, opacity 100ms
+			img
+				width 100%
+			&:hover
+				.caption
+					transform scale(1)
+					opacity 1
+		.carousel
+			margin-top 30px
+			.item
+				img
+					width 100%
+		.end-page
+			margin-top 50px
+			overflow hidden
+			.projects-navigation
+				display inline-block
+				padding 10px 20px
+				margin-top 8px
+				border none
+				.arrow
+					position relative
+					display block
+					width 35px
+					height 1px
+					background-color $grey
+					transition transform 300ms, background-color 300ms
+					&:after
+						content ''
+						display block
+						position absolute
+						width 0
+						height 0
+						top -4px
+						border-top 5px solid transparent
+						border-bottom 5px solid transparent
+						transition border-color 300ms
+					&.arrow-left
+						&:after
+							left 0
+							border-right 5px solid $grey
+					&.arrow-right
+						&:after
+							right 0
+							border-left 5px solid $grey
+				&.previous-project
+					float left
+				&.next-project
+					float right
+				&:hover
+					.arrow
+						background-color $main
+						&.arrow-left
+							transform translateX(-20px)
+							&:after
+								border-right-color $main
+						&.arrow-right
+							transform translateX(20px)
+							&:after
+								border-left-color $main
+			.share-block
+				text-align center
+				margin-top 3px
+				ul
+					list-style none
+					margin auto
+					padding 0
+					li
+						display inline-block
+						a
+							display block
+							padding 5px
+							color $grey
+							border none
+							font-size 14px
+							&:hover
+								color $main
+	&.alternate
+		.end-page
+			margin-top 100px
+/*
+	8. About Page
+*/
+#about-page
+	#main
+		.services
+			margin-top 60px
+			.service-block
+				margin-bottom 30px
+				h4
+					margin 0
+				p
+					margin 15px 0 0
+		.team
+			margin-top 100px
+			.team-title
+				text-align center
+				margin-bottom 70px
+				h2
+					margin 0
+				p
+					margin 0
+					font-size 17px
+			.team-member
+				text-align center
+				margin-bottom 30px
+				.photo
+					border-radius 500px
+					overflow hidden
+					img
+						width 100%
+				.content
+					margin-top 20px
+					h3
+						margin 0
+					p
+						margin 0
+					.social-links
+						list-style none
+						margin 15px 0 0
+						padding 0
+						li
+							display inline-block
+							opacity 0
+							transform translateY(10px)
+							for i in (1..10)
+								&:nth-child({i})
+									transition transform 200ms (i * 100)ms, opacity 200ms (i * 100)ms
+							a
+								display block
+								width 28px
+								height 28px
+								color alpha($grey, 0.7)
+								font-size 16px
+								border-bottom none
+								line-height 1
+								padding-top 6px
+								&:hover
+									color $main
+				&:hover
+					.social-links
+						li
+							transform translateY(0)
+							opacity 1
+		.studio
+			margin-top 50px
+			h2
+				line-height 1
+				margin 0
+			p
+				margin-top 25px
+		.approach
+			margin-top 80px
+			img
+				width 100%
+			.text
+				padding 25px 0
+				h2
+					margin 0
+				p
+					font-size 19px
+				.links
+					list-style none
+					margin 40px 0 0
+					padding 0
+					li
+						margin-bottom 15px
+						&:last-child
+							margin-bottom 0
+						a
+							font-size 17px
+							border-bottom 1px solid alpha($main, 0.3)
+							&:hover
+								border-color alpha($main, 1)
+
+/*
+	9. Blog Page
+*/
+#blog-page
+	#main
+		.articles-list
+			margin-top 10px
+		article
+			border-bottom 1px solid alpha($grey, 0.2)
+			.post
+				position relative
+				display block
+				border none
+				padding 40px 0
+			.arrow
+				position absolute
+				display block
+				top 50%
+				right 0
+				width 35px
+				height 1px
+				background-color $grey
+				transition opacity 300ms
+				opacity 0
+				&:after
+					content ''
+					display block
+					position absolute
+					width 0
+					height 0
+					top -4px
+					right 0
+					border-top 5px solid transparent
+					border-bottom 5px solid transparent
+					border-left 5px solid $grey
+					transition border-color 300ms
+			.content
+				display inline-block
+				transition transform 250ms
+				h2
+					margin 0
+					padding-right 50px
+					line-height 1.2
+					transition color 250ms
+				> ul
+					list-style none
+					margin 3px 0 0
+					padding 0
+					> li
+						display inline-block
+						margin-right 20px
+						&:last-child
+							margin-right 0
+						&.author
+							display inline-block
+							font-weight 400
+							font-size 11px
+							letter-spacing 0.4px
+							text-transform uppercase
+							&:before
+								content 'by'
+								margin-right 3px
+						&.categories
+							ul
+								padding 0
+								li
+									display inline
+									color $grey
+									font-size 13px
+									font-weight 300
+									&:after
+										content '—'
+										margin-left 5px
+									&:last-child
+										margin-right 0
+										&:after
+											content ''
+											margin-left 0
+				p
+					font-size 15px
+			&:hover
+				.arrow
+					opacity 1
+				.content
+					transform translateX(5px)
+					h2
+						color alpha($header, 0.6)
+		.end-page
+			margin-top 50px
+			overflow hidden
+			.pages-navigation
+				display inline-block
+				padding 10px 20px
+				margin-top 8px
+				border none
+				.arrow
+					position relative
+					display block
+					width 35px
+					height 1px
+					background-color $grey
+					transition transform 300ms, background-color 300ms
+					&:after
+						content ''
+						display block
+						position absolute
+						width 0
+						height 0
+						top -4px
+						border-top 5px solid transparent
+						border-bottom 5px solid transparent
+						transition border-color 300ms
+					&.arrow-left
+						&:after
+							left 0
+							border-right 5px solid $grey
+					&.arrow-right
+						&:after
+							right 0
+							border-left 5px solid $grey
+				&.previous-page
+					float left
+				&.next-page
+					float right
+				&:hover
+					.arrow
+						background-color $main
+						&.arrow-left
+							transform translateX(-20px)
+							&:after
+								border-right-color $main
+						&.arrow-right
+							transform translateX(20px)
+							&:after
+								border-left-color $main
+			.pagination
+				list-style none
+				margin 3px 0 0
+				padding 0
+				text-align center
+				li
+					display inline-block
+					a
+						display block
+						border-bottom none
+						padding 4px 10px
+						color $header
+						&:hover
+							color $main
+					&.current
+						color $grey
+						margin 4px 8px
+	&.alternative
+		#main
+			article
+				border-bottom none
+				margin-bottom 70px
+				&:last-of-type
+					margin-bottom 0
+				.image
+					display block
+					position relative
+					overflow hidden
+					border-bottom none
+					z-index 3
+					i
+						display inline-block
+						position absolute
+						top 0
+						left 15px
+						font-size 20px
+						color $white
+						z-index 2
+						opacity 0
+						transition top 250ms, opacity 100ms
+					img
+						width 100%
+					&:before
+						content ''
+						display block
+						width 100%
+						height 100%
+						position absolute
+						top 0
+						left 0
+						transition opacity 250ms
+						opacity 0
+						background-color alpha($black, 0.3)
+						z-index 1
+					&:hover
+						i
+							top 10px
+							opacity 1
+						&:before
+							opacity 1
+				.content
+					margin-top 20px
+					.title
+						h2
+							transition color 150ms
+							padding-right 0
+						&:hover
+							h2
+								color $main
+					> ul
+						margin 6px 0 0
+					p
+						margin 30px 0 40px
+					.read-more
+						font-size 17px
+						border-bottom 1px solid alpha($main, 0.3)
+						&:hover
+							border-color alpha($main, 1)
+				&:hover
+					.content
+						transform none
+						h2
+							color $header
+/*
+	10. Blog Single
+*/
+#blog-single
+	#main
+		article
+			.title-image
+				margin-bottom 20px
+				img
+					width 100%
+			.article-top
+				h2
+					margin 0
+					padding-right 50px
+					line-height 1.2
+					transition color 250ms
+				> ul
+					list-style none
+					margin 6px 0 30px
+					padding 0
+					> li
+						display inline-block
+						margin-right 20px
+						&:last-child
+							margin-right 0
+						&.author
+							display inline-block
+							font-weight 400
+							font-size 11px
+							letter-spacing 0.4px
+							text-transform uppercase
+							&:before
+								content 'by'
+								margin-right 3px
+						&.time
+							font-size 13px
+							color $grey
+						&.categories
+							ul
+								padding 0
+								li
+									display inline
+									color $grey
+									font-size 13px
+									font-weight 300
+									&:after
+										content '—'
+										margin-left 5px
+									&:last-child
+										margin-right 0
+										&:after
+											content ''
+											margin-left 0
+		.end-page
+			margin-top 50px
+			overflow hidden
+			.articles-navigation
+				display inline-block
+				padding 10px 20px
+				margin-top 8px
+				border none
+				.arrow
+					position relative
+					display block
+					width 35px
+					height 1px
+					background-color $grey
+					transition transform 300ms, background-color 300ms
+					&:after
+						content ''
+						display block
+						position absolute
+						width 0
+						height 0
+						top -4px
+						border-top 5px solid transparent
+						border-bottom 5px solid transparent
+						transition border-color 300ms
+					&.arrow-left
+						&:after
+							left 0
+							border-right 5px solid $grey
+					&.arrow-right
+						&:after
+							right 0
+							border-left 5px solid $grey
+				&.previous-article
+					float left
+				&.next-article
+					float right
+				&:hover
+					.arrow
+						background-color $main
+						&.arrow-left
+							transform translateX(-20px)
+							&:after
+								border-right-color $main
+						&.arrow-right
+							transform translateX(20px)
+							&:after
+								border-left-color $main
+			.share-block
+				text-align center
+				margin-top 3px
+				ul
+					list-style none
+					margin auto
+					padding 0
+					li
+						display inline-block
+						a
+							display block
+							padding 5px
+							color $grey
+							border none
+							font-size 14px
+							&:hover
+								color $main
+		.comments
+			h3
+				margin 0 0 30px
+			.comments-list
+				margin-top 70px
+				.comment
+					margin-bottom 60px
+					&:last-child
+						margin-bottom 0
+					&.reply
+						margin-left 70px
+					.user-photo
+						float left
+						overflow hidden
+						border-radius 100%
+						margin-right 25px
+						img
+							width 100%
+					.content
+						overflow hidden
+						h4
+							display inline-block
+							margin 0 8px 0 0
+							line-height 1
+						.time
+							font-size 11px
+							color $grey
+						p
+							margin 15px 0 20px
+						.reply
+							display inline-block
+							border-bottom 1px solid alpha($main, 0.3)
+							&:hover
+								border-color alpha($main, 1)
+			.leave-comment
+				margin-top 70px
+				form
+					input,
+					textarea
+						border-color alpha($black, 0.08)
+						background-color transparent
+						margin-bottom 30px
+						&:focus
+							border-color alpha($black, 0.3)
+					textarea
+						min-height 250px
+/*
+	11. Contact Page
+*/
+#contact-page
+	#google-map
+		margin-top 30px
+		width 100%
+		height 400px
+	#main
+		.offices-information
+			margin-top 50px
+			h2
+				line-height 1
+				margin 0
+			p
+				margin-top 25px
+		.offices-list
+			margin-top 60px
+			.office-block
+				margin-bottom 30px
+				h4
+					margin 0
+				p
+					margin 15px 0 0
+					.phone
+						display inline-block
+						color $para
+						border-bottom 1px dotted alpha($grey, 0.7)
+						margin 3px 0
+						padding-bottom 0
+						&:hover
+							border-bottom-color transparent
+							color $header
+		.say-hello
+			margin-top 80px
+			h2
+				line-height 1
+				margin 0
+			p
+				margin-top 25px
+			form
+				margin-top 50px
+				input,
+				textarea
+					border-color alpha($black, 0.08)
+					background-color transparent
+					margin-bottom 30px
+					&:focus
+						border-color alpha($black, 0.3)
+					&.invalid
+						border-color #f44336
+						color #f44336
+						border-radius 0
+				textarea
+					min-height 250px
+				#message
+					margin-top 20px
+					p
+						margin 0
+						margin 0
+					.error
+						p
+							color #f44336
+					.success
+						p
+							color $main
+
+/*
+	12. Responsive
+*/
+@media (max-width: 992px)
+	#works-grid
+		.works-item
+			width 48.25% !important
+
+@media (max-width: 768px)
+	.global-outer
+		.global-inner
+			padding 60px 30px
+	#sidebar
+		float none
+		width 100%
+		text-align center
+		.sidebar-inner
+			padding-right 0
+		.logo
+			margin-bottom 15px
+		.intro
+			border-bottom 1px dashed alpha($black, 0.1)
+			padding-bottom 20px
+		nav
+			padding 15px 0 10px
+			ul
+				li
+					display inline-block
+					margin 0 5px
+					&.dropdown
+						poisiion relative
+						margin-right 17px
+						ul
+							position absolute
+							margin-top 5px
+							background-color $white
+							padding 0 15px
+							box-shadow 0 0 10px 5px alpha($black, 0.035);
+							text-align left
+							z-index 10
+							li
+								display block
+								&:first-child
+									padding-top 10px
+								&:last-child
+									padding-bottom 10px
+								a
+									display block
+		.copyright
+			display none
+		.widgets-block
+			.widget
+				.title
+					&:after
+						display none
+				margin 30px 0 50px
+				ul
+					li
+						display inline-block
+						margin 0 5px
+	#main
+		float none
+		width 100%
+		.main-outer
+			padding-left 0
+	#project-page
+		#main
+			.end-page
+				text-align center
+				.projects-navigation
+					.arrow
+					&.previous-project,
+					&.next-project
+						float none
+				.share-block
+					margin 20px 0
+	#blog-page
+		#main
+			.end-page
+				text-align center
+				.pages-navigation
+					.arrow
+					&.previous-page,
+					&.next-page
+						float none
+				.pagination
+					margin 20px 0
+	#blog-single
+		#main
+			.end-page
+				text-align center
+				.articles-navigation
+					.arrow
+					&.previous-article,
+					&.next-article
+						float none
+				.share-block
+					margin 20px 0
+					
+@media (max-width: 540px)
+	.global-outer
+		.global-inner
+			padding 60px 10px
+	#works-grid
+		.works-item
+			width 100% !important
+	#blog-single
+		#main
+			.comments
+				.comments-list
+					.comment
+						&.reply
+							margin-left 35px
