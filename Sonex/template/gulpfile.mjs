@@ -10,7 +10,6 @@ import autoprefixer from "autoprefixer";
 import perfectionist from "perfectionist";
 import prettify from "gulp-html-prettify";
 import concat from "gulp-concat";
-import tinypng from "gulp-tinypng";
 import browserSync from "browser-sync"; // Dodanie BrowserSync
 
 const src = "./src/";
@@ -79,14 +78,6 @@ gulp.task("concatjs", function () {
     .pipe(concat("plugins.min.js"))
     .pipe(gulp.dest(dist + "js"))
     .pipe(browserSync.stream()); // Odświeżenie po zmianach
-});
-
-// TinyPNG
-gulp.task("tinypng", function () {
-  return gulp
-    .src(src + "img/**/*.png")
-    .pipe(tinypng("PqKQpry0jDgslSo32t_IEdE-1TJZjuZ1"))
-    .pipe(gulp.dest(dist + "img"));
 });
 
 // Serwer lokalny z browserSync (Hot reloading)
