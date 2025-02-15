@@ -102,16 +102,17 @@ gulp.task("serve", function () {
 
 // Watch (Wykonuje obserwowanie zmian w plikach)
 gulp.task("watch", function () {
-  gulp.watch(src + "pug/*.pug", gulp.series("pug"));
-  gulp.watch(src + "styl/*.styl", gulp.series("stylus"));
-  gulp.watch(src + "js/*.js", gulp.series("concatjs"));
-  gulp.watch(dist + "*.html", gulp.series("prettify"));
-  gulp.watch(dist + "css/*.css", gulp.series("uncss"));
-  gulp.watch(src + "img/**/*", gulp.series("imagemin"));
+  gulp.watch(src + "pug/**/*.pug", gulp.series("pug")); // tylko źródłowe pliki Pug
+  gulp.watch(src + "styl/**/*.styl", gulp.series("stylus")); // tylko źródłowe pliki Stylus
+  gulp.watch(src + "js/**/*.js", gulp.series("concatjs")); // tylko źródłowe pliki JS
+  gulp.watch(src + "img/**/*", gulp.series("imagemin")); // tylko źródłowe obrazy
 });
 
 // Default task (Uruchamia wszystkie taski)
 gulp.task(
   "default",
-  gulp.series("pug", "stylus", "concatjs", "prettify", "serve", "watch")
+  gulp.series(
+    gulp.parallel("pug", "stylus", "concatjs", "prettify"), // Najpierw kompilacja
+    gulp.parallel("serve", "watch") // Potem uruchomienie serwera i watcherów
+  )
 );
