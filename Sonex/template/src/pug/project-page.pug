@@ -8,9 +8,6 @@ block content
 				header#sidebar
 					.sidebar-inner
 						include layout/navigation
-						.widgets-block
-							include layout/widgets/search
-							include layout/widgets/recent-projects
 						include layout/copyright
 				main#main
 					.main-outer
@@ -18,7 +15,7 @@ block content
 							.row
 								.col-md-12
 									.title-image
-										img(src='http://placehold.it/900x500' alt='')
+										img(src='http://placehold.co/900x500' alt='')
 							.row
 								.col-md-9
 									.description
@@ -49,11 +46,11 @@ block content
 								.col-md-6
 									.project-image
 										.caption First Mockup
-										img(src='http://placehold.it/800x530' alt='')
+										img(src='http://placehold.co/800x530' alt='')
 								.col-md-6
 									.project-image
 										.caption Second Mockup
-										img(src='http://placehold.it/800x530' alt='')
+										img(src='http://placehold.co/800x530' alt='')
 							.row
 								.col-md-12
 									#project-carousel.carousel.slide
@@ -63,23 +60,9 @@ block content
 											li(data-target='.carousel' data-slide-to='2')
 										.carousel-inner
 											.item.active
-												img(src='http://placehold.it/900x500' alt='')
+												img(src='http://placehold.co/900x500' alt='')
 											.item
-												img(src='http://placehold.it/900x500' alt='')
+												img(src='http://placehold.co/900x500' alt='')
 											.item
-												img(src='http://placehold.it/900x500' alt='')
-							.row
-								.end-page
-									.col-sm-3
-										a.projects-navigation.previous-project(href='#')
-											.arrow.arrow-left
-									.col-sm-6
-										.share-block
-											ul
-												each i in ['facebook', 'twitter', 'vkontakte', 'gplus', 'pinterest-circled', 'mail-alt']
-													li
-														a(class='icon-' + i, href='#')
-									.col-sm-3
-										a.projects-navigation.next-project(href='#')
-											.arrow.arrow-right
+												img(src='http://placehold.co/900x500' alt='')
 		include layout/js
