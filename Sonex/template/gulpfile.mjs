@@ -5,7 +5,9 @@ import postcss from "gulp-postcss";
 import plumber from "gulp-plumber";
 import notify from "gulp-notify";
 import uncss from "gulp-uncss";
+import shell from "gulp-shell";
 import imagemin from "gulp-imagemin";
+import newer from "gulp-newer";
 import autoprefixer from "autoprefixer";
 import perfectionist from "perfectionist";
 import prettify from "gulp-html-prettify";
@@ -50,12 +52,8 @@ gulp.task("uncss", function () {
 });
 
 // Imagemin
-gulp.task("imagemin", function () {
-  return gulp
-    .src(src + "img/**/*")
-    .pipe(imagemin())
-    .pipe(gulp.dest(dist + "img"));
-});
+
+gulp.task("copy-images", shell.task("cp -r src/img/* dist/img/"));
 
 // HTML Prettify
 gulp.task("prettify", function () {
@@ -96,14 +94,14 @@ gulp.task("watch", function () {
   gulp.watch(src + "pug/**/*.pug", gulp.series("pug")); // tylko źródłowe pliki Pug
   gulp.watch(src + "styl/**/*.styl", gulp.series("stylus")); // tylko źródłowe pliki Stylus
   gulp.watch(src + "js/**/*.js", gulp.series("concatjs")); // tylko źródłowe pliki JS
-  gulp.watch(src + "img/**/*", gulp.series("imagemin")); // tylko źródłowe obrazy
+  gulp.watch(src + "img/**/*", gulp.series("copy-images")); // tylko źródłowe obrazy
 });
 
 // Default task (Uruchamia wszystkie taski)
 gulp.task(
   "default",
   gulp.series(
-    gulp.parallel("pug", "stylus", "concatjs", "prettify"), // Najpierw kompilacja
-    gulp.parallel("serve", "watch") // Potem uruchomienie serwera i watcherów
+    gulp.parallel("pug", "stylus", "concatjs", "prettify", "copy-images"), // Dodane "copy-images"
+    gulp.parallel("serve", "watch")
   )
 );
