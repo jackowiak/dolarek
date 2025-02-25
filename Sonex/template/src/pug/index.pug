@@ -1,6 +1,6 @@
 extends layout/head
 block title
-	title DOLLAR MODA GRAPHICS VIDEO & SCULPTURE
+	title DOLLAR MODA by Henryk Brzeski
 block content
 	body#index-page
 		.global-outer
@@ -18,8 +18,8 @@ block content
 								.col-md-12
 									#works-grid
 										.gutter
-										mixin works-item(title, categories, list, img)
-											a(class='works-item smooth-leave ' + categories, href='project-page.html')
+										mixin works-item(title, categories, list, img, slug)
+											a(class='works-item smooth-leave ' + categories, href=`p_${slug}.html`)
 												.picture
 													.content
 														.text
@@ -28,14 +28,14 @@ block content
 																each val in list
 																	li=val
 													img(src=img, alt='')
-										+works-item('Ćpaj Stajl - Lato w ghettcie', 'typography illustration', ['Typography', 'Illustration'], 'img/projects/cs_lwg/thumbnail.png')
-										+works-item('Ćpaj Stajl - Melodramat', 'branding', ['Branding'], 'img/projects/cs_melodramat/thumbnail.png')
-										+works-item('Ćpaj Stajl - Białe szaleństwo', 'typography branding', ['Typography', 'Branding'], 'img/projects/cs_bs/thumbnail.png')
-										+works-item("Ćpaj Stajl - Złoty strzał", 'illustration', ['Illustration'], 'img/projects/cs_zs/thumbnail.png')
-										+works-item("Kacperczyk", 'branding', ['Branding'], 'img/projects/kacperczyk/thumbnail.png')
-										+works-item('Lordofon', 'branding', ['Branding'], 'img/projects/lordofon/thumbnail.png')
-										+works-item('Tacet', 'illustration typography', ['Illustration', 'Typography'], 'img/projects/tacet/thumbnail.png')
-										+works-item('Other', 'typography', ['Typography'], 'img/projects/rest/thumbnail.png')
+										+works-item('Ćpaj Stajl - Lato w ghettcie', 'typography illustration', ['Typography', 'Illustration'], 'img/projects/cs_lwg/thumbnail.png', 'lato_w_ghettcie')
+										+works-item('Ćpaj Stajl - Melodramat', 'branding', ['Branding'], 'img/projects/cs_melodramat/thumbnail.png', 'melodramat')
+										+works-item('Ćpaj Stajl - Białe szaleństwo', 'typography branding', ['Typography', 'Branding'], 'img/projects/cs_bs/thumbnail.png', 'biale_szalenstwo')
+										+works-item("Ćpaj Stajl - Złoty strzał", 'illustration', ['Illustration'], 'img/projects/cs_zs/thumbnail.png', 'zloty_strzal')
+										+works-item("Kacperczyk", 'branding', ['Branding'], 'img/projects/kacperczyk/thumbnail.png', 'kacperczyk')
+										+works-item('Lordofon', 'branding', ['Branding'], 'img/projects/lordofon/thumbnail.png', 'lordofon')
+										+works-item('Tacet', 'illustration typography', ['Illustration', 'Typography'], 'img/projects/tacet/thumbnail.png', 'tacet')
+										+works-item('Other', 'typography', ['Typography'], 'img/projects/rest/thumbnail.png', 'other')
 								//- .row
 								//- 	.col-md-12
 								//- 		.load-more

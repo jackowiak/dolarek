@@ -1,0 +1,72 @@
+extends layout/head
+block title
+	title SONEX – Project
+block content
+	body#project-page
+		.global-outer
+			.global-inner
+				header#sidebar
+					.sidebar-inner
+						include layout/navigation
+						include layout/copyright
+				main#main
+					.main-outer
+						.container-fluid
+							.row
+								.col-md-12
+									.title-image
+										img(src='img/projects/tacet/1.png' alt='')
+							.row
+								.col-md-9
+									.description
+										h1 Tacet
+										ul.categories
+											li Typography
+											li Branding
+										p
+											| I had the pleasure of overseeing and directing the entire visual concept for Wojtek Urbański's project - Tacet. This includes the logo, single covers (screen printing on a steel disc), and the music video for the track “Flare.”
+
+										p
+											|
+								.col-md-3
+									.details
+										ul
+											li
+												| Date:
+												span July 2016
+											li
+												| Client:
+												span Rom Mar
+											li
+												| Budget:
+												span $3000
+											li
+												| Art Director:
+												span John Doe
+							.row
+								.col-md-6
+									.project-image
+										.caption First Mockup
+										img(src='img/projects/tacet/5.png' alt='')
+								.col-md-6
+									.project-image
+										.caption Second Mockup
+										img(src='img/projects/tacet/6.png' alt='')
+							.row
+								.col-md-12
+									#project-carousel.carousel.slide
+										ol.carousel-indicators
+											li.active(data-target='.carousel' data-slide-to='0')
+											li(data-target='.carousel' data-slide-to='1')
+											li(data-target='.carousel' data-slide-to='2')
+											li(data-target='.carousel' data-slide-to='3')
+										.carousel-inner
+											.item.active
+												img(src='img/projects/tacet/2.png' alt='')
+											.item
+												img(src='img/projects/tacet/3.png' alt='')
+											.item
+												img(src='img/projects/tacet/4.png' alt='')
+											.item
+												img(src='img/projects/tacet/7.png' alt='')
+		include layout/js
