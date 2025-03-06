@@ -19,6 +19,7 @@
 */
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400';
 @import 'https://fonts.googleapis.com/css?family=Lora:400,400italic';
+@import 'https://fonts.googleapis.com/css2?family=Kumar+One&display=swap';
 
 /*
 	2. Common Styles
@@ -892,6 +893,7 @@ input:focus, textarea:focus {
 }
 
 #project-page #main .description {
+    text-align: justify;
     margin: 50px 0 30px;
 }
 
@@ -906,7 +908,7 @@ input:focus, textarea:focus {
 
 #project-page #main .description .categories {
     list-style: none;
-    margin: -5px 0 35px;
+    margin: 0 0 10px;
     padding: 0;
 }
 
