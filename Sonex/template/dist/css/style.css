@@ -81,6 +81,7 @@ p {
     font-size: 15px;
     line-height: 1.8;
     color: #6d6d6d;
+    margin: 0;
 }
 
 p.lead {
