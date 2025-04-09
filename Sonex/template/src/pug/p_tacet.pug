@@ -12,10 +12,31 @@ block content
 				main#main
 					.main-outer
 						.container-fluid
+
+
 							.row
 								.col-md-12
-									.title-image
-										img(src='img/projects/tacet/1.png' alt='')
+									#project-carousel.carousel.slide
+										ol.carousel-indicators
+											li.active(data-target='.carousel' data-slide-to='0')
+											li(data-target='.carousel' data-slide-to='1')
+											li(data-target='.carousel' data-slide-to='2')
+											li(data-target='.carousel' data-slide-to='3')
+											li(data-target='.carousel' data-slide-to='4')
+											li(data-target='.carousel' data-slide-to='5')
+										.carousel-inner
+											.item.active
+												img(src='img/projects/tacet/karuzela1.jpg' alt='')
+											.item
+												img(src='img/projects/tacet/karuzela2.jpg' alt='')
+											.item
+												img(src='img/projects/tacet/karuzela3.jpg' alt='')
+											.item
+												img(src='img/projects/tacet/karuzela4.jpg' alt='')
+											.item
+												img(src='img/projects/tacet/karuzela5.jpg' alt='')
+											.item
+												img(src='img/projects/tacet/karuzela6.jpg' alt='')
 							.row
 								.col-md-9
 									.description
@@ -33,40 +54,26 @@ block content
 										ul
 											li
 												| Date:
-												span July 2016
+												span February 2024
 											li
 												| Client:
-												span Rom Mar
-											li
-												| Budget:
-												span $3000
-											li
-												| Art Director:
-												span John Doe
+												span Dyspensa Records
+
+							.row
+								.col-md-12
+									.project-image
+										img(src='img/projects/tacet/2.png' alt='')
 							.row
 								.col-md-6
 									.project-image
 										.caption First Mockup
-										img(src='img/projects/tacet/5.png' alt='')
+										img(src='img/projects/tacet/3.png' alt='')
 								.col-md-6
 									.project-image
 										.caption Second Mockup
-										img(src='img/projects/tacet/6.png' alt='')
-							.row
+										img(src='img/projects/tacet/4.png' alt='')
 								.col-md-12
-									#project-carousel.carousel.slide
-										ol.carousel-indicators
-											li.active(data-target='.carousel' data-slide-to='0')
-											li(data-target='.carousel' data-slide-to='1')
-											li(data-target='.carousel' data-slide-to='2')
-											li(data-target='.carousel' data-slide-to='3')
-										.carousel-inner
-											.item.active
-												img(src='img/projects/tacet/2.png' alt='')
-											.item
-												img(src='img/projects/tacet/3.png' alt='')
-											.item
-												img(src='img/projects/tacet/4.png' alt='')
-											.item
-												img(src='img/projects/tacet/7.png' alt='')
+									.project-image
+										iframe(src='https://www.youtube.com/embed/ntCnydwV5wM' alt='' width="1431" height="609" title="TACET - Flare" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
+
 		include layout/js
