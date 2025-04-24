@@ -16,17 +16,15 @@ block content
 						.container-fluid
 							.row
 								.col-md-12
-									#works-grid
-										.gutter
-										mixin works-item(title, categories, list, img, slug)
-											a(class='works-item smooth-leave ' + categories, href=`p_${slug}.html`)
-												.picture
-													.content
-														.text
-															h2=title
-															ul
-																each val in list
-																	li=val
-													img(src=img, alt='')
-										+works-item('Ćpaj Stajl - Lato w ghettcie', 'typography illustration', ['Typography', 'Illustration'], 'img/projects/cs_lwg/thumbnail.png', 'lato_w_ghettcie')
+									iframe(src='https://www.youtube.com/embed/ntCnydwV5wM' alt='' width="1431" height="609" title="TACET - Flare" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
+								.col-md-12
+									iframe(src='https://www.youtube.com/embed/IA_CJ0ioXAU' alt='' width="1431" height="609" title="TACET - Flare" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
+								.col-md-12
+									iframe(src='https://www.youtube.com/embed/_nkvpdeJ0Ho' alt='' width="1431" height="609" title="TACET - Flare" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
+								.col-md-12
+									iframe(src='https://www.youtube.com/embed/irPZYl5F-Bg' alt='' width="1431" height="609" title="TACET - Flare" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
+								.col-md-12
+									iframe(src='https://www.youtube.com/embed/Cz7du_hb9M0' alt='' width="1431" height="609" title="TACET - Flare" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
+								.col-md-12
+									iframe(src='https://www.youtube.com/embed/tuFr-j23nHQ' alt='' width="1431" height="609" title="TACET - Flare" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen)
 		include layout/js
