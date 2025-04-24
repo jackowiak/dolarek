@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SONEX – Documentation</title>
+	<link rel="icon" type="image/png" href="img/favicon.png">
+	<link rel="stylesheet" href="css/highlight.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<header>
+		<h1><a href="index.html">SONEX Documentation</a></h1>
+		<p>Eye-catching portfolio focused on showcase your talents and skills.</p><a class="button" href="#section-requirements">Get Started</a>
+	</header>
+	<div class="container">
+		<nav>
+			<div class="inner">
+				<ul>
+					<li><a href="index.html">Introduction</a>
+					</li>
+					<li class="parent"><span>HTML</span>
+						<ul>
+							<li><a href="html-common-parts.html">Common Parts</a>
+							</li>
+							<li class="current"><a href="html-index.html">Index Page</a>
+							</li>
+							<li><a href="html-project.html">Project Page</a>
+							</li>
+							<li><a href="html-project-alt.html">Project Page Alt</a>
+							</li>
+							<li><a href="html-about.html">About Page</a>
+							</li>
+							<li><a href="html-blog.html">Blog Page</a>
+							</li>
+							<li><a href="html-blog-alt.html">Blog Page Alt</a>
+							</li>
+							<li><a href="html-blog-single.html">Blog Single Page</a>
+							</li>
+							<li><a href="html-contact.html">Contact Page</a>
+							</li>
+						</ul>
+						<li><a href="css.html">CSS</a>
+						</li>
+						<li><a href="javascript.html">Javascript</a>
+						</li>
+						<li><a href="credits.html">Credits</a>
+						</li>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<main>
+			<div class="inner">
+				<h2>Index Page</h2>
+				<p>The main goal of index page is show your portfolio works. So, main part of this page it's a grid of portfolio items. Also this page has filters to filter items. Body of this page must have id <span class="selector">#index-page</span>.</p>
+				<h4>Items</h4>
+				<p>Each item has next layout: title, categories and picture. You should add category class to item if you want to see this item in a specific category. All items should be wrapped to <span class="selector">#works-grid</span>. Just add class <span class="selector">.columns-2</span> to
+					<span
+					class="selector">#works-grid</span>to make 2 columns with items or add class <span class="selector">.columns-4</span> to make 4 columns.</p>
+				<div class="code-snippet">
+					<h6>works item</h6>
+					<pre><code class="html">&lt;a class="works-item smooth-leave typography illustration" href="project-page.html"&gt;
+	&lt;div class="picture"&gt;
+		&lt;div class="content"&gt;
+			&lt;div class="text"&gt;
+				&lt;h2&gt;Mutualismi&lt;/h2&gt;
+				&lt;ul&gt;
+					&lt;li&gt;Typography&lt;/li&gt;
+					&lt;li&gt;Illustration&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;img src="img/works/1.png" alt=""&gt;
+	&lt;/div&gt;
+&lt;/a&gt;</code></pre>
+				</div>
+				<h4>Filters</h4>
+				<p>Block with filters located in sidebar.</p>
+				<div class="code-snippet">
+					<h6>filters</h6>
+					<pre><code class="html">&lt;div class="widget filter" id="works-filter"&gt;
+	&lt;p class="title"&gt;Works Filter&lt;/p&gt;
+	&lt;ul&gt;
+		&lt;li class="active" data-filter="*"&gt;All&lt;/li&gt;
+		&lt;li data-filter=".typography"&gt;Typography&lt;/li&gt;
+		&lt;li data-filter=".illustration"&gt;Illustration&lt;/li&gt;
+		&lt;li data-filter=".branding"&gt;Branding&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+				<p class="bottom-page">If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="https://themeforest.net/user/rmmr?ref=rmmr" target="_blank">here</a>. Thanks so much!</p>
+			</div>
+		</main>
+	</div>
+	<script src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/highlight.min.js"></script>
+	<script src="js/functions.js"></script>
+</body>
+
+</html>

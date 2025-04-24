@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SONEX – Documentation</title>
+	<link rel="icon" type="image/png" href="img/favicon.png">
+	<link rel="stylesheet" href="css/highlight.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<header>
+		<h1><a href="index.html">SONEX Documentation</a></h1>
+		<p>Eye-catching portfolio focused on showcase your talents and skills.</p><a class="button" href="#section-requirements">Get Started</a>
+	</header>
+	<div class="container">
+		<nav>
+			<div class="inner">
+				<ul>
+					<li><a href="index.html">Introduction</a>
+					</li>
+					<li class="parent"><span>HTML</span>
+						<ul>
+							<li><a href="html-common-parts.html">Common Parts</a>
+							</li>
+							<li><a href="html-index.html">Index Page</a>
+							</li>
+							<li><a href="html-project.html">Project Page</a>
+							</li>
+							<li><a href="html-project-alt.html">Project Page Alt</a>
+							</li>
+							<li><a href="html-about.html">About Page</a>
+							</li>
+							<li><a href="html-blog.html">Blog Page</a>
+							</li>
+							<li><a href="html-blog-alt.html">Blog Page Alt</a>
+							</li>
+							<li><a href="html-blog-single.html">Blog Single Page</a>
+							</li>
+							<li><a href="html-contact.html">Contact Page</a>
+							</li>
+						</ul>
+						<li class="current"><a href="css.html">CSS</a>
+						</li>
+						<li><a href="javascript.html">Javascript</a>
+						</li>
+						<li><a href="credits.html">Credits</a>
+						</li>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<main>
+			<div class="inner">
+				<h2>CSS</h2>
+				<p>All CSS files located in <span class="selector">css</span> directory. Sonex has 5 CSS files:</p>
+				<ol>
+					<li>bootstrap.min.css</li>
+					<li>fontello.min.css</li>
+					<li>magnific-popup.min.css</li>
+					<li>animsition.min.css</li>
+					<li>style.css</li>
+				</ol>
+				<h4>bootstrap.min.css</h4>
+				<p>File with styles of Boostrap 3 Framework. It contains only grid system, other Boostrap styles not included. See more information on <a href="http://getbootstrap.com/" target="_blank">getbootstrap.com</a>.</p>
+				<h4>fontello.min.css</h4>
+				<p>File with styles of icon webfont. It's custom icon webfont which contains such icons:</p>
+				<ol>
+					<li>icon-mail-alt</li>
+					<li>icon-eye</li>
+					<li>icon-facebook</li>
+					<li>icon-vkontakte</li>
+					<li>icon-twitter</li>
+					<li>icon-pinterest-circled</li>
+					<li>icon-gplus</li>
+				</ol>
+				<p>As you can see, each icon class has prefix <span class="selector">icon-</span>. To insert icon you should add class like <span class="selector">icon-eye</span> to any selector, but I recommend use <span class="selector">i</span> selector for this. Visit
+					<a
+					href="http://fontello.com/" target="_blank">fontello.com</a>for more information.</p>
+				<div class="code-snippet">
+					<h6>example</h6>
+					<pre><code class="html">&lt;i class="icon-eye"&gt;&lt;/i&gt;</code></pre>
+				</div>
+				<h4>magnific-popup.min.css</h4>
+				<p>File with styles of lightbox which used in gallery of project page. See official documentation on <a href="http://dimsemenov.com/plugins/magnific-popup/" target="_blank">dimsemenov.com/plugins/magnific-popup/</a>.</p>
+				<h4>animsition.min.css</h4>
+				<p>File with styles of plugin which responsible for smooth transition between pages. See more information on <a href="http://git.blivesta.com/animsition/" target="_blank">git.blivesta.com/animsition/</a>.</p>
+				<h4>style.css</h4>
+				<p>This is a main CSS file with 12 different sections:</p>
+				<ol>
+					<li>Google Fonts Import</li>
+					<li>Common Styles</li>
+					<li>Sidebar</li>
+					<li>Main</li>
+					<li>Works Grid</li>
+					<li>Index Page</li>
+					<li>Project Page</li>
+					<li>About Page</li>
+					<li>Blog Page</li>
+					<li>Blog Single</li>
+					<li>Contact Page</li>
+					<li>Responsive</li>
+				</ol>
+				<p>Section with responsive layout has different media quires. All media queries arranged in order of decay. If you want to add your media query, add it so as not to upset the order. To add you media query use the syntax:</p>
+				<div class="code-snippet">
+					<h6>media query example</h6>
+					<pre><code class="css">@media (max-width: Npx) {
+	/* Your Code Here */
+}</code></pre>
+				</div>
+				<p>Where <b>N</b> means number of pixels of screen.</p>
+				<p class="bottom-page">If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="https://themeforest.net/user/rmmr?ref=rmmr" target="_blank">here</a>. Thanks so much!</p>
+			</div>
+		</main>
+	</div>
+	<script src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/highlight.min.js"></script>
+	<script src="js/functions.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SONEX – Documentation</title>
+	<link rel="icon" type="image/png" href="img/favicon.png">
+	<link rel="stylesheet" href="css/highlight.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<header>
+		<h1><a href="index.html">SONEX Documentation</a></h1>
+		<p>Eye-catching portfolio focused on showcase your talents and skills.</p><a class="button" href="#section-requirements">Get Started</a>
+	</header>
+	<div class="container">
+		<nav>
+			<div class="inner">
+				<ul>
+					<li><a href="index.html">Introduction</a>
+					</li>
+					<li class="parent"><span>HTML</span>
+						<ul>
+							<li><a href="html-common-parts.html">Common Parts</a>
+							</li>
+							<li><a href="html-index.html">Index Page</a>
+							</li>
+							<li><a href="html-project.html">Project Page</a>
+							</li>
+							<li><a href="html-project-alt.html">Project Page Alt</a>
+							</li>
+							<li><a href="html-about.html">About Page</a>
+							</li>
+							<li><a href="html-blog.html">Blog Page</a>
+							</li>
+							<li><a href="html-blog-alt.html">Blog Page Alt</a>
+							</li>
+							<li class="current"><a href="html-blog-single.html">Blog Single Page</a>
+							</li>
+							<li><a href="html-contact.html">Contact Page</a>
+							</li>
+						</ul>
+						<li><a href="css.html">CSS</a>
+						</li>
+						<li><a href="javascript.html">Javascript</a>
+						</li>
+						<li><a href="credits.html">Credits</a>
+						</li>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<main>
+			<div class="inner">
+				<h2>Blog Single Page</h2>
+				<p>Body of this page must have id <span class="selector">#blog-single</span>. This page has next layout: post, comments and leave comment section.</p>
+				<h4>Post</h4>
+				<p>Post has next layout: title image, title, author, time, post categories and text.</p>
+				<img class="screenshot" src="img/blog-single-post.png" alt="">
+				<div class="code-snippet">
+					<h6>post layout</h6>
+					<pre><code class="html">&lt;article&gt;
+	&lt;div class="title-image"&gt;
+		&lt;img src="img/blog/blog-image-4.png" alt=""&gt;
+	&lt;/div&gt;
+	&lt;div class="article-top"&gt;
+		&lt;h2&gt;Design Better Forms&lt;/h2&gt;
+		&lt;ul&gt;
+			&lt;li class="author"&gt;Ted Ross&lt;/li&gt;
+			&lt;li class="time"&gt;15 July 2016&lt;/li&gt;
+			&lt;li class="categories"&gt;
+				&lt;ul&gt;
+					&lt;li&gt;&lt;a href="#"&gt;Branding&lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li&gt;&lt;a href="#"&gt;Podcast&lt;/a&gt;
+					&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+	&lt;div class="article-text"&gt;
+		&lt;p class="lead"&gt;Donec fringilla pharetra enim, eu vestibulum ligula. Nulla nibh dolor, eleifend vitae dolor vitae, fringilla tincidunt arcu. Sed sagittis magna id tortor interdum scelerisque. Curabitur quis neque sit amet magna vehicula interdum. Vivamus non
+			commodo nunc.&lt;/p&gt;
+		&lt;p&gt;Donec interdum, nisi at euismod rhoncus, ligula sem ornare nisi, sed scelerisque mauris turpis in lorem. Suspendisse porttitor ultrices viverra. Aenean et viverra justo. Aliquam erat volutpat. Nullam rhoncus sed sem eget tempor. Aliquam lacus
+			diam, condimentum id sem nec, faucibus molestie diam. Maecenas mattis lectus id metus iaculis tempor. Donec in ex nisi. Curabitur dictum, lectus sed dignissim rhoncus, &lt;a href="#"&gt;enim&lt;/a&gt; nisl commodo ex, porttitor mollis augue dui ac urna.
+			Praesent facilisis ante mauris, ac luctus velit imperdiet vel. Nam ultricies ipsum id ornare consequat. Donec id tristique mauris. Fusce lectus tellus, pretium sit amet ante vel, faucibus pharetra sem. Aliquam placerat felis sem, ut varius
+			tellus viverra ac.&lt;/p&gt;
+		&lt;blockquote&gt;Integer id imperdiet nulla, et molestie nunc. Mauris vitae vulputate magna. Donec augue dolor, mollis convallis nisi sed, suscipit rhoncus velit. Donec eget congue justo.&lt;/blockquote&gt;
+		&lt;p&gt;Vestibulum augue arcu, tincidunt nec ante at, feugiat vehicula turpis. Aliquam eu leo ipsum. Aenean tincidunt pharetra est porta gravida. Aenean a turpis tristique, facilisis nisl quis, ornare massa. Donec commodo mattis facilisis. Morbi sit
+			amet nisi quis sapien sagittis viverra vitae vitae dui. Nullam tempor sagittis facilisis.&lt;/p&gt;
+		&lt;p&gt;Quisque ornare risus vitae velit aliquam dapibus. Etiam ipsum lorem, feugiat a ipsum nec, eleifend gravida libero. Cras pharetra lectus eget dolor molestie volutpat. Etiam viverra hendrerit metus non consequat.&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/article&gt;</code></pre>
+				</div>
+				<h4>Comments</h4>
+				<p>This section show user's comments and must be wrapped to <span class="selector">.comments</span>.</p>
+				<img class="screenshot" src="img/blog-single-comments.png" alt="">
+				<p>Each comment has next layout: photo, name, time and message.</p>
+				<div class="code-snippet">
+					<h6>comment layout</h6>
+					<pre><code class="html">&lt;div class="comment"&gt;
+	&lt;div class="row"&gt;
+		&lt;div class="col-md-8"&gt;
+			&lt;div class="user-photo"&gt;
+				&lt;img src="img/blog/comment-1.png" alt=""&gt;
+			&lt;/div&gt;
+			&lt;div class="content"&gt;
+				&lt;h4&gt;Eric&lt;/h4&gt;&lt;small class="time"&gt;15 July 2016&lt;/small&gt;
+				&lt;p&gt;Fusce at justo magna. Pellentesque ut libero blandit, pretium urna vitae, dictum tortor.&lt;/p&gt;&lt;a class="reply" href="#"&gt;Reply&lt;/a&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+				<p>If you want to make comment as reply just add class <span class="selector">.reply</span> to comment.</p>
+				<h4>Leave Comment</h4>
+				<p>This section contains form to leave comment. It must be wrapped to <span class="selector">.leave-comment</span>.</p>
+				<img class="screenshot" src="img/blog-single-leave-comment.png" alt="">
+				<div class="code-snippet">
+					<h6>leave comment layout</h6>
+					<pre><code class="html">&lt;div class="leave-comment"&gt;
+	&lt;h3&gt;Leave Comment&lt;/h3&gt;
+	&lt;div class="row"&gt;
+		&lt;div class="col-md-12"&gt;
+			&lt;form&gt;
+				&lt;div class="row"&gt;
+					&lt;div class="col-sm-6"&gt;
+						&lt;input type="text" placeholder="Name" name="comments-name"&gt;
+					&lt;/div&gt;
+					&lt;div class="col-sm-6"&gt;
+						&lt;input type="text" placeholder="Email" name="comments-email"&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;textarea placeholder="Comment" name="comments-comment"&gt;&lt;/textarea&gt;&lt;a class="btn" href="#"&gt;Leave Comment&lt;/a&gt;
+			&lt;/form&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+				<p class="bottom-page">If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="https://themeforest.net/user/rmmr?ref=rmmr" target="_blank">here</a>. Thanks so much!</p>
+			</div>
+		</main>
+	</div>
+	<script src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/highlight.min.js"></script>
+	<script src="js/functions.js"></script>
+</body>
+
+</html>

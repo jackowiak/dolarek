@@ -1,0 +1,32 @@
+extends layout/head
+block title
+	title DOLLAR MODA by Henryk Brzeskidfassg
+block content
+	body#index-page
+		.global-outer
+			.global-inner
+				header#sidebar
+					.sidebar-inner
+						include layout/navigation
+						.widgets-block
+							//- include layout/widgets/works-filter
+						include layout/copyright
+				main#main
+					.main-outer
+						.container-fluid
+							.row
+								.col-md-12
+									#works-grid
+										.gutter
+										mixin works-item(title, categories, list, img, slug)
+											a(class='works-item smooth-leave ' + categories, href=`p_${slug}.html`)
+												.picture
+													.content
+														.text
+															h2=title
+															ul
+																each val in list
+																	li=val
+													img(src=img, alt='')
+										+works-item('Ćpaj Stajl - Lato w ghettcie', 'typography illustration', ['Typography', 'Illustration'], 'img/projects/cs_lwg/thumbnail.png', 'lato_w_ghettcie')
+		include layout/js

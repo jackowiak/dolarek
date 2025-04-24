@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SONEX – Documentation</title>
+	<link rel="icon" type="image/png" href="img/favicon.png">
+	<link rel="stylesheet" href="css/highlight.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<header>
+		<h1><a href="index.html">SONEX Documentation</a></h1>
+		<p>Eye-catching portfolio focused on showcase your talents and skills.</p><a class="button" href="#section-requirements">Get Started</a>
+	</header>
+	<div class="container">
+		<nav>
+			<div class="inner">
+				<ul>
+					<li><a href="index.html">Introduction</a>
+					</li>
+					<li class="parent"><span>HTML</span>
+						<ul>
+							<li><a href="html-common-parts.html">Common Parts</a>
+							</li>
+							<li><a href="html-index.html">Index Page</a>
+							</li>
+							<li><a href="html-project.html">Project Page</a>
+							</li>
+							<li><a href="html-project-alt.html">Project Page Alt</a>
+							</li>
+							<li><a href="html-about.html">About Page</a>
+							</li>
+							<li><a href="html-blog.html">Blog Page</a>
+							</li>
+							<li><a href="html-blog-alt.html">Blog Page Alt</a>
+							</li>
+							<li><a href="html-blog-single.html">Blog Single Page</a>
+							</li>
+							<li class="current"><a href="html-contact.html">Contact Page</a>
+							</li>
+						</ul>
+						<li><a href="css.html">CSS</a>
+						</li>
+						<li><a href="javascript.html">Javascript</a>
+						</li>
+						<li><a href="credits.html">Credits</a>
+						</li>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<main>
+			<div class="inner">
+				<h2>Contact Page</h2>
+				<p>Body of this page must have id <span class="selector">#contact-page</span>. This page has next layout: page title, map, contact information and feedback form.</p>
+				<h4>Map</h4>
+				<p>This template uses Google Map via API. Element which is responsible for map is <span class="selector">#google-map</span>. First, it's empty, but when user load page, special script append map inside this element.</p>
+				<div class="code-snippet">
+					<h6>google map script</h6>
+					<pre><code class="js">function initMap() {
+		var mapOptions = {
+			scrollwheel: false,
+			zoom: 15,
+			disableDefaultUI: true,
+			center: new google.maps.LatLng(48.507664, 32.268486),
+			styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
+		};
+		var mapElement = document.getElementById('google-map');
+		var map = new google.maps.Map(mapElement, mapOptions);
+		var marker = new google.maps.Marker({
+			position: new google.maps.LatLng(48.507664, 32.268486),
+			map: map,
+			icon: 'img/map-marker.png',
+			title: 'Sonex'
+		});
+	}</code></pre>
+				</div>
+				<p>To change position of map you should change latitude and longitude of your point.</p>
+				<div class="code-snippet">
+					<h6>latitude and longitude</h6>
+					<pre><code class="js">position: new google.maps.LatLng(48.507664, 32.268486)</code></pre>
+				</div>
+				<p>Also you can change style of map. I use <a href="https://snazzymaps.com/" target="_blank">Snazzy Maps</a> and recommend it for you. For more information about Google Map API see <a href="https://developers.google.com/maps/documentation/javascript" target="_blank">this link</a>.</p>
+				<h4>Contact Information</h4>
+				<p>This part has next layout: paragraphs and columns with information about offices.</p>
+				<img class="screenshot" src="img/contact-information.png" alt="">
+				<div class="code-snippet">
+					<h6>paragraphs layout</h6>
+					<pre><code class="html">&lt;div class="offices-information"&gt;
+	&lt;div class="row"&gt;
+		&lt;div class="col-md-8"&gt;
+			&lt;h2&gt;Offices&lt;/h2&gt;
+			&lt;p class="lead"&gt;We have four offices around Ukraine. Each of them is located in center of city. So, you don't need to search us, we are always close to you.&lt;/p&gt;
+			&lt;p&gt;Cras tincidunt, sapien at pretium fermentum, enim tellus elementum mi, sed dignissim turpis neque at elit. Sed ut aliquam ipsum, vitae aliquet velit.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+				<div class="code-snippet">
+					<h6>offices layout</h6>
+					<pre><code class="html">&lt;div class="offices-list"&gt;
+	&lt;div class="row"&gt;
+		&lt;div class="col-md-3"&gt;
+			&lt;div class="office-block"&gt;
+				&lt;h4&gt;Kirovograd&lt;/h4&gt;
+				&lt;p&gt;
+					1570 Kildeer Drive
+					&lt;br&gt;Frankfort, OH 45628
+					&lt;br&gt;&lt;a class="phone" href="tel:+30661234567"&gt;+30661234567&lt;/a&gt;
+					&lt;br&gt;&lt;a href="#"&gt;kr@sonex.com&lt;/a&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="col-md-3"&gt;
+			&lt;div class="office-block"&gt;
+				&lt;h4&gt;Kyiv&lt;/h4&gt;
+				&lt;p&gt;
+					1144 Ben Street
+					&lt;br&gt;East Lansing, MI 48823
+					&lt;br&gt;&lt;a class="phone" href="tel:+30957654321"&gt;+30957654321&lt;/a&gt;
+					&lt;br&gt;&lt;a href="#"&gt;kyiv@sonex.com&lt;/a&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="col-md-3"&gt;
+			&lt;div class="office-block"&gt;
+				&lt;h4&gt;Odessa&lt;/h4&gt;
+				&lt;p&gt;
+					2607 Locust Court
+					&lt;br&gt;Artesia, CA 90701
+					&lt;br&gt;&lt;a class="phone" href="tel:+30507842168"&gt;+30507842168&lt;/a&gt;
+					&lt;br&gt;&lt;a href="#"&gt;od@sonex.com&lt;/a&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="col-md-3"&gt;
+			&lt;div class="office-block"&gt;
+				&lt;h4&gt;Lviv&lt;/h4&gt;
+				&lt;p&gt;
+					722 Spruce Drive
+					&lt;br&gt;Bridgeville, PA 15017
+					&lt;br&gt;&lt;a class="phone" href="tel:+30975413287"&gt;+30975413287&lt;/a&gt;
+					&lt;br&gt;&lt;a href="#"&gt;lviv@sonex.com&lt;/a&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+				<h4>Feedback Form</h4>
+				<p>This part contains title and form.</p>
+				<img class="screenshot" src="img/contact-feedback-form.png" alt="">
+				<div class="code-snippet">
+					<h6>form layout</h6>
+					<pre><code class="html">&lt;form&gt;
+	&lt;div class="row"&gt;
+		&lt;div class="col-sm-6"&gt;
+			&lt;input id="contact-name" type="text" name="contact-name" placeholder="Name"&gt;
+		&lt;/div&gt;
+		&lt;div class="col-sm-6"&gt;
+			&lt;input id="contact-email" type="text" name="contact-email" placeholder="Email"&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;input id="contact-subject" type="text" name="contact-subject" placeholder="Subject"&gt;
+	&lt;textarea id="contact-message" name="contact-message" placeholder="Message"&gt;&lt;/textarea&gt;&lt;a class="btn" id="submit" href="#"&gt;Send Message&lt;/a&gt;
+	&lt;div id="message"&gt;
+		&lt;div class="error"&gt;&lt;/div&gt;
+		&lt;div class="success"&gt;&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</code></pre>
+				</div>
+				<p class="bottom-page">If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="https://themeforest.net/user/rmmr?ref=rmmr" target="_blank">here</a>. Thanks so much!</p>
+			</div>
+		</main>
+	</div>
+	<script src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/highlight.min.js"></script>
+	<script src="js/functions.js"></script>
+</body>
+
+</html>

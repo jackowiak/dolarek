@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SONEX – Documentation</title>
+	<link rel="icon" type="image/png" href="img/favicon.png">
+	<link rel="stylesheet" href="css/highlight.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<header>
+		<h1><a href="index.html">SONEX Documentation</a></h1>
+		<p>Eye-catching portfolio focused on showcase your talents and skills.</p><a class="button" href="#section-requirements">Get Started</a>
+	</header>
+	<div class="container">
+		<nav>
+			<div class="inner">
+				<ul>
+					<li><a href="index.html">Introduction</a>
+					</li>
+					<li class="parent"><span>HTML</span>
+						<ul>
+							<li class="current"><a href="html-common-parts.html">Common Parts</a>
+							</li>
+							<li><a href="html-index.html">Index Page</a>
+							</li>
+							<li><a href="html-project.html">Project Page</a>
+							</li>
+							<li><a href="html-project-alt.html">Project Page Alt</a>
+							</li>
+							<li><a href="html-about.html">About Page</a>
+							</li>
+							<li><a href="html-blog.html">Blog Page</a>
+							</li>
+							<li><a href="html-blog-alt.html">Blog Page Alt</a>
+							</li>
+							<li><a href="html-blog-single.html">Blog Single Page</a>
+							</li>
+							<li><a href="html-contact.html">Contact Page</a>
+							</li>
+						</ul>
+						<li><a href="css.html">CSS</a>
+						</li>
+						<li><a href="javascript.html">Javascript</a>
+						</li>
+						<li><a href="credits.html">Credits</a>
+						</li>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<main>
+			<div class="inner">
+				<h2>Common Parts</h2>
+				<p>Some pages has common parts such as sidebar and page title.</p>
+				<h4>Sidebar</h4>
+				<p>Each page has sidebar part. It's a block which contains logo, intro message, navigation, different widgets and copyright.</p>
+				<img class="screenshot" src="img/sidebar.png" alt="">
+				<div class="code-snippet">
+					<h6>sidebar</h6>
+					<pre><code class="html">&lt;header id="sidebar"&gt;
+	&lt;div class="sidebar-inner"&gt;
+		&lt;a class="logo smooth-leave" href="index.html"&gt;
+			&lt;img src="img/logo.png" alt="GA"&gt;
+		&lt;/a&gt;
+		&lt;p class="intro"&gt;A small team of designers based in Kirovograd, UA. See our latest projects and get in touch.&lt;/p&gt;
+		&lt;nav&gt;
+			&lt;ul&gt;
+				&lt;li class="dropdown"&gt;&lt;span class="current"&gt;Work&lt;/span&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;a class="smooth-leave" href="index-columns-2.html"&gt;2 Columns&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;&lt;a class="smooth-leave current" href="index.html"&gt;3 Columns&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;&lt;a class="smooth-leave" href="index-columns-4.html"&gt;4 Columns&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;&lt;a class="smooth-leave" href="project-page.html"&gt;Project Page&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;&lt;a class="smooth-leave" href="project-page-alt.html"&gt;Project Page Alt&lt;/a&gt;
+						&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a class="smooth-leave" href="about.html"&gt;About&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li class="dropdown"&gt;&lt;span&gt;Blog&lt;/span&gt;
+					&lt;ul&gt;
+						&lt;li&gt;&lt;a class="smooth-leave" href="blog.html"&gt;Posts List&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;&lt;a class="smooth-leave" href="blog-alt.html"&gt;Posts List Alt&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;&lt;a class="smooth-leave" href="blog-single.html"&gt;Single Post&lt;/a&gt;
+						&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/li&gt;
+				&lt;li&gt;&lt;a class="smooth-leave" href="contact.html"&gt;Contact&lt;/a&gt;
+				&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/nav&gt;
+		&lt;div class="widgets-block"&gt;
+			&lt;!-- YOUR WIDGETS --&gt;
+		&lt;/div&gt;
+		&lt;p class="copyright"&gt;SONEX &copy; 2016.&lt;br&gt;Crafted with care &amp; love.&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/header&gt;</code></pre>
+				</div>
+				<h4>Page Title</h4>
+				<p>Some pages has block called page title which contains title, text and image (I recommend to use <b>1000x465px</b> size).</p>
+				<img class="screenshot" src="img/page-title.png" alt="">
+				<div class="code-snippet">
+					<h6>page title</h6>
+					<pre><code class="html">&lt;div class="page-title"&gt;
+	&lt;div class="row"&gt;
+		&lt;div class="col-md-8"&gt;
+			&lt;h1&gt;About&lt;/h1&gt;
+			&lt;p class="lead"&gt;We are Sonex Studio, a small team of designers based in Kirovograd, that create nice looking designs.&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="col-md-12"&gt;
+			&lt;div class="page-title-image"&gt;
+				&lt;img src="img/about/title.png" alt=""&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+				<p class="bottom-page">If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="https://themeforest.net/user/rmmr?ref=rmmr" target="_blank">here</a>. Thanks so much!</p>
+			</div>
+		</main>
+	</div>
+	<script src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/highlight.min.js"></script>
+	<script src="js/functions.js"></script>
+</body>
+
+</html>
