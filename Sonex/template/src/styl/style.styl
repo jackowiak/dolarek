@@ -83,6 +83,7 @@ p
 	color $para
 	&.lead
 		font-size 19px
+		margin-bottom 20px
 	margin 0px;
 
 a
@@ -98,7 +99,8 @@ a
 		border-color alpha($main, 0.3)
 	&:focus
 		outline none
-		
+a i.fab.fa-instagram
+			color black		
 ul
 	font-size 15px
 	color $para
@@ -232,6 +234,8 @@ textarea
 			opacity 0
 
 .page-title
+	img
+		max-width 100%
 	h1
 		margin 0
 		line-height 1
@@ -245,9 +249,12 @@ textarea
 	3. Sidebar
 */
 #sidebar
+	position fixed
 	width 25%
 	float left
 	overflow hidden
+	img
+		max-width 80%
 	.sidebar-inner
 		padding-right 30px
 	.logo
@@ -483,6 +490,7 @@ textarea
 */
 #main
 	float left
+	margin-left 25%
 	overflow hidden
 	width 75%
 	.main-outer
@@ -1343,6 +1351,8 @@ textarea
 									padding-bottom 10px
 								a
 									display block
+			img
+				max-width 100%
 		.copyright
 			display none
 		.widgets-block
