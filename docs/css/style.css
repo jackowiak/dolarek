@@ -86,6 +86,7 @@ p {
 
 p.lead {
     font-size: 19px;
+    margin-bottom: 20px;
 }
 
 a {
@@ -103,6 +104,10 @@ a:hover, a:active, a:focus {
 
 a:focus {
     outline: none;
+}
+
+a i.fab.fa-instagram {
+    color: #000;
 }
 
 ul {
@@ -337,6 +342,10 @@ input:focus, textarea:focus {
     opacity: 0;
 }
 
+.page-title img {
+    max-width: 100%;
+}
+
 .page-title h1 {
     margin: 0;
     line-height: 1;
@@ -359,9 +368,14 @@ input:focus, textarea:focus {
 */
 
 #sidebar {
+    position: fixed;
     width: 25%;
     float: left;
     overflow: hidden;
+}
+
+#sidebar img {
+    max-width: 80%;
 }
 
 #sidebar .sidebar-inner {
@@ -747,6 +761,7 @@ input:focus, textarea:focus {
 
 #main {
     float: left;
+    margin-left: 25%;
     overflow: hidden;
     width: 75%;
 }
@@ -2067,6 +2082,10 @@ input:focus, textarea:focus {
 
     #sidebar nav ul li.dropdown ul li a {
         display: block;
+    }
+
+    #sidebar nav img {
+        max-width: 100%;
     }
 
     #sidebar .copyright {
