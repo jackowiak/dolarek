@@ -368,7 +368,6 @@ input:focus, textarea:focus {
 */
 
 #sidebar {
-    position: fixed;
     width: 25%;
     float: left;
     overflow: hidden;
@@ -761,7 +760,6 @@ input:focus, textarea:focus {
 
 #main {
     float: left;
-    margin-left: 25%;
     overflow: hidden;
     width: 75%;
 }
