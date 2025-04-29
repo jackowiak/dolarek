@@ -862,12 +862,14 @@ input:focus, textarea:focus {
     z-index: 1;
 }
 
-#works-grid .works-item:hover .picture .content .text {
+#works-grid .works-item:hover .picture .content .text,
+#works-grid .works-item:active .picture .content .text {
     transform: scale(1);
     opacity: 1;
 }
 
-#works-grid .works-item:hover .picture:before {
+#works-grid .works-item:hover .picture:before,
+#works-grid .works-item:active .picture:before {
     opacity: 1;
 }
 
