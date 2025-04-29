@@ -368,7 +368,6 @@ input:focus, textarea:focus {
 */
 
 #sidebar {
-    position: fixed;
     width: 25%;
     float: left;
     overflow: hidden;
@@ -761,7 +760,6 @@ input:focus, textarea:focus {
 
 #main {
     float: left;
-    margin-left: 25%;
     overflow: hidden;
     width: 75%;
 }
@@ -2014,6 +2012,16 @@ input:focus, textarea:focus {
 	12. Responsive
 */
 
+@media (min-width: 768px) {
+    #sidebar {
+        position: fixed;
+    }
+
+    #main {
+        margin-left: 25%;
+    }
+}
+
 @media (max-width: 992px) {
     #works-grid .works-item {
         width: 48.25% !important;
@@ -2026,6 +2034,7 @@ input:focus, textarea:focus {
     }
 
     #sidebar {
+        position: sticky;
         float: none;
         width: 100%;
         text-align: center;

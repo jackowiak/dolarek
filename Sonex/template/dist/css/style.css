@@ -2034,6 +2034,7 @@ input:focus, textarea:focus {
     }
 
     #sidebar {
+        position: sticky;
         float: none;
         width: 100%;
         text-align: center;
