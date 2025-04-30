@@ -2032,7 +2032,7 @@ input:focus, textarea:focus {
 
 @media (max-width: 768px) {
     .global-outer .global-inner {
-        padding: 60px 30px;
+        padding: 10px 30px 60px 30px;
     }
 
     #sidebar {
@@ -2047,7 +2047,8 @@ input:focus, textarea:focus {
     }
 
     #sidebar .logo {
-        margin-bottom: 15px;
+        margin-bottom: 0;
+        transform: scale(.7);
     }
 
     #sidebar .intro {
@@ -2056,7 +2057,10 @@ input:focus, textarea:focus {
     }
 
     #sidebar nav {
-        padding: 15px 0 10px;
+        position: relative;
+        bottom: 30px;
+        padding: 0 0 10px;
+        font: bold;
     }
 
     #sidebar nav ul li {
@@ -2170,7 +2174,7 @@ input:focus, textarea:focus {
 
 @media (max-width: 540px) {
     .global-outer .global-inner {
-        padding: 60px 10px;
+        padding: 10px 30px 60px 30px;
     }
 
     #works-grid .works-item {

@@ -1318,7 +1318,7 @@ textarea
 @media (max-width: 768px)
 	.global-outer
 		.global-inner
-			padding 60px 30px
+			padding 10px 30px 60px 30px
 	#sidebar
 		position sticky
 		float none
@@ -1327,12 +1327,16 @@ textarea
 		.sidebar-inner
 			padding-right 0
 		.logo
-			margin-bottom 15px
+			margin-bottom 0
+			transform scale(0.7)
 		.intro
 			border-bottom 1px dashed alpha($black, 0.1)
 			padding-bottom 20px
 		nav
-			padding 15px 0 10px
+			position relative
+			bottom 30px
+			padding 0 0 10px
+			font bold
 			ul
 				li
 					display inline-block
@@ -1412,7 +1416,7 @@ textarea
 @media (max-width: 540px)
 	.global-outer
 		.global-inner
-			padding 60px 10px
+			padding 10px 30px 60px 30px
 	#works-grid
 		.works-item
 			width 100% !important
