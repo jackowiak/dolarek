@@ -2129,6 +2129,18 @@ input:focus, textarea:focus {
         padding-left: 0;
     }
 
+    #main .details {
+        display: none;
+    }
+
+    #main .description h1 {
+        font-size: 24px;
+    }
+
+    #main .categories {
+        margin-bottom: 20px !important;
+    }
+
     #project-page #main .end-page {
         text-align: center;
     }
