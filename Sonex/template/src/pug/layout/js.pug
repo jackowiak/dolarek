@@ -1,2 +1,38 @@
 script(src='js/plugins.min.js')
 script(src='js/functions.js')
+
+script.
+  function sendEmail(e) {
+    e.preventDefault();
+    window.location.href = 'mailto:xxx@dollarmoda.pl';
+  }
+
+
+script.
+  const modal = document.getElementById('video-modal');
+  const iframe = document.getElementById('yt-player');
+
+  function openVideoModal(el) {
+    const videoId = el.closest('.project-image').querySelector('video').dataset.videoId;
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+    modal.classList.remove('hidden');
+  }
+
+  function closeVideoModal() {
+    modal.classList.add('hidden');
+    iframe.src = ''; // Zatrzymuje odtwarzanie po zamknięciu
+  }
+
+  // Lazy loading video
+  const videos = document.querySelectorAll('.project-image video');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.play();
+      } else {
+        entry.target.pause();
+      }
+    });
+  });
+
+  videos.forEach(v => observer.observe(v));

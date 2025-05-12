@@ -1,71 +1,99 @@
 extends layout/head
-block title
-	title DOLLAR MODA by Henryk Brzeskidfassg
-block content
-	body#project-page
-		.global-outer
-			.global-inner
-				header#sidebar
-					.sidebar-inner
-						include layout/navigation
-				main#main
-					.main-outer
-						.container-fluid
-							//- .row
-							//- 	.col-md-6
-							//- 		.project-image
-							//- 			img(src='img/projects/videos/buty.gif' alt='')
-							//- 	.col-md-6
-							//- 		.project-image
-							//- 			img(src='img/projects/videos/catchup.gif' alt='')
-							//- .row
-							//- 	.col-md-4
-							//- 		.project-image
-							//- 			img(src='img/projects/videos/flare2.gif' alt='')
-							//- 	.col-md-4
-							//- 		.project-image
-							//- 			img(src='img/projects/videos/kemo.gif' alt='')
-							//- 	.col-md-4
-							//- 		.project-image
-							//- 			img(src='img/projects/videos/synek.gif' alt='')
-							//- .row
-							//- 	.col-md-12
-							//- 		.project-image
-							//- 			img(src='img/projects/videos/proch.gif' alt='')
-							//- .row
-							//- 	.col-md-6
-							//- 		.project-image
-							//- 			img(src='img/projects/videos/test.gif' alt='')
-							//- 	.col-md-6
-							//- 		.project-image
-							//- 			img(src='img/projects/videos/tereny.gif' alt='')
-							.row
-								.col-md-12
-									.project-image
-										img(src='img/projects/videos/tylemam.gif' alt='')
-							.row
-								.col-md-12
-									.project-image
-										img(src='img/projects/videos/tylemam.gif' alt='')
-							.row
-								.col-md-12
-									.project-image
-										img(src='img/projects/videos/tylemam.gif' alt='')
-							.row
-								.col-md-12
-									.project-image
-										img(src='img/projects/videos/tylemam.gif' alt='')
-							.row
-								.col-md-12
-									.project-image
-										img(src='img/projects/videos/tylemam.gif' alt='')
-							.row
-								.col-md-12
-									.project-image
-										img(src='img/projects/videos/tylemam.gif' alt='')
-							.row
-								.col-md-12
-									.project-image
-										img(src='img/projects/videos/tylemam.gif' alt='')
 
-		include layout/js
+block title
+  title DOLLAR MODA by Henryk Brzeski
+
+block content
+  body#project-page
+    .global-outer
+      .global-inner
+        header#sidebar
+          .sidebar-inner
+            include layout/navigation
+        main#main
+          .main-outer
+            .container-fluid
+              .row
+                .col-md-6
+                  .project-image
+                    video(
+                      src='/img/projects/videos/tylemamcon.mp4',
+                      autoplay,
+                      loop,
+                      muted,
+                      playsinline,
+                      preload='none',
+                      data-video-id='QMcURI-C-wk'
+											onclick='openVideoModal(this)'
+                    )
+              .row
+                .col-md-6
+                  .project-image
+                    video(
+                      src='/img/projects/videos/tylemamcon.mp4',
+                      autoplay,
+                      loop,
+                      muted,
+                      playsinline,
+                      preload='none',
+                      data-video-id='QMcURI-C-wk'
+											onclick='openVideoModal(this)'
+                    )
+              .row
+                .col-md-6
+                  .project-image
+                    video(
+                      src='/img/projects/videos/tylemamcon.mp4',
+                      autoplay,
+                      loop,
+                      muted,
+                      playsinline,
+                      preload='none',
+                      data-video-id='QMcURI-C-wk'
+											onclick='openVideoModal(this)'
+                    )
+              .row
+                .col-md-6
+                  .project-image
+                    video(
+                      src='/img/projects/videos/tylemamcon.mp4',
+                      autoplay,
+                      loop,
+                      muted,
+                      playsinline,
+                      preload='none',
+                      data-video-id='QMcURI-C-wk'
+											onclick='openVideoModal(this)'
+                    )
+              .row
+                .col-md-6
+                  .project-image
+                    video(
+                      src='/img/projects/videos/tylemamcon.mp4',
+                      autoplay,
+                      loop,
+                      muted,
+                      playsinline,
+                      preload='none',
+                      data-video-id='QMcURI-C-wk'
+											onclick='openVideoModal(this)'
+                    )
+              .row
+                .col-md-6
+                  .project-image
+                    video(
+                      src='/img/projects/videos/tylemamcon.mp4',
+                      autoplay,
+                      loop,
+                      muted,
+                      playsinline,
+                      preload='none',
+                      data-video-id='QMcURI-C-wk'
+											onclick='openVideoModal(this)'
+                    )
+            // Modal do YouTube
+            #video-modal.hidden
+              .modal-content
+                iframe#yt-player(width='100%' height='100%' frameborder='0' allow='autoplay; fullscreen')
+              button.close(onclick='closeVideoModal()') ✕
+    include layout/js
