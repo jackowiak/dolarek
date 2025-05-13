@@ -1,6 +1,6 @@
 extends layout/head
 block title
-	title DOLLAR MODA by Henryk Brzeskiaaa1
+	title DOLLAR MODA by Henryk Brzeski
 block content
 	body#contact-page
 		.global-outer
@@ -13,12 +13,8 @@ block content
 						.container-fluid
 							.page-title
 								.row
-									.col-md-12 
-										h1 About
-										p.lead
-											| I have a deep appreciation for art that integrates diverse styles and techniques. Rather than confining myself to a single discipline, I work across graphics, video and sculpture.
 									.col-md-12
-										img(src='img/about_foto.png' alt='SO')
+										img(src='img/about_me_small.png' alt='SO')
 								.say-hello
 									.row
 										.col-md-8
@@ -52,8 +48,7 @@ block content
 				var marker = new google.maps.Marker({
 					position: new google.maps.LatLng(48.507664, 32.268486),
 					map: map,
-					icon: 'img/map-marker.png',
+					icon: 'img/favicon.png',
 					title: 'Sonex'
 				});
 			}
-		script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAX8G3RzmOAIGGMxZSXqxSkuc2UIs0QpLQ&callback=initMap")
