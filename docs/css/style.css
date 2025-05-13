@@ -391,7 +391,7 @@ input:focus, textarea:focus {
 
 #video-modal .modal-content {
     position: relative;
-    width: 90vw;
+    width: 75vw;
     max-width: 1600px;
     aspect-ratio: 16/9;
     background: #000;
@@ -424,7 +424,7 @@ input:focus, textarea:focus {
 }
 
 #sidebar img {
-    max-width: 80%;
+    max-width: 200px;
 }
 
 #sidebar .sidebar-inner {
@@ -1077,7 +1077,7 @@ input:focus, textarea:focus {
 }
 
 #project-page #main .project-image video {
-    width: 200%;
+    width: 100%;
 }
 
 #project-page #main .project-image:hover .caption {
