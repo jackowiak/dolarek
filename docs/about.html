@@ -1,114 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:image" content="https://jackowiak.github.io/img/og-thumbnail.jpg">
-	<title>DOLLAR MODA by Henryk Brzeski</title>
-	<link rel="icon" type="image/png" href="img/favicon.png">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/fontello.min.css">
-	<link rel="stylesheet" href="css/magnific-popup.min.css">
-	<link rel="stylesheet" href="css/animsition.min.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Kumar+One&amp;display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-	<script defer>
-		document.addEventListener('touchstart', () => {}, true)
-	</script>
-</head>
-
-<body id="contact-page">
-	<div class="global-outer">
-		<div class="global-inner">
-			<header id="sidebar">
-				<div class="sidebar-inner">
-					<a class="logo smooth-leave" href="index.html">
-						<img src="img/logo_cut.GIF" alt="SO">
-					</a>
-					<nav>
-						<ul>
-							<li><a class="smooth-leave" href="index.html">COVERS &amp; POSTERS</a>
-							</li>
-							<li><a class="smooth-leave" href="videos.html">VIDEOS</a>
-							</li>
-							<li><a class="smooth-leave" href="about.html">ABOUT</a>
-							</li>
-							<li><a class="smooth-leave" href="https://www.instagram.com/dollarmoda/"><i class="fab fa-instagram"></i></a><a class="mail-icon" href="mailto:dollarmoda@gmail.com"><i class="fas fa-envelope"></i></a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			</header>
-			<main id="main">
-				<div class="main-outer">
-					<div class="container-fluid">
-						<div class="page-title">
-							<div class="row">
-								<div class="col-md-12">
-									<img src="img/about_me_v2.png" alt="SO">
-								</div>
-							</div>
-							<div class="say-hello">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta property="og:image" content="https://jackowiak.github.io/dolarek/img/og-thumbnail.png">
+		<title>DOLLAR MODA by Henryk Brzeski</title>
+		<link rel="icon" type="image/png" href="img/favicon.png">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/fontello.min.css">
+		<link rel="stylesheet" href="css/magnific-popup.min.css">
+		<link rel="stylesheet" href="css/animsition.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Kumar+One&amp;display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		<script defer>document.addEventListener('touchstart', () => {}, true)</script>
+	</head>
+	<body id="contact-page">
+		<div class="global-outer">
+			<div class="global-inner">
+				<header id="sidebar">
+					<div class="sidebar-inner"><a class="logo smooth-leave" href="index.html"><img src="img/logo_cut.GIF" alt="SO"></a>
+						<nav>
+							<ul>
+																<li><a class="smooth-leave" href="index.html">COVERS &amp; POSTERS</a></li>
+																<li><a class="smooth-leave" href="videos.html">VIDEOS</a></li>
+																<li><a class="smooth-leave" href="about.html">ABOUT</a></li>
+								<li><a class="smooth-leave" href="https://www.instagram.com/dollarmoda/"><i class="fab fa-instagram"></i></a><a class="mail-icon" href="mailto:dollarmoda@gmail.com"><i class="fas fa-envelope"></i></a></li>
+							</ul>
+						</nav>
+					</div>
+				</header>
+				<main id="main">
+					<div class="main-outer">
+						<div class="container-fluid">
+							<div class="page-title">
 								<div class="row">
-									<div class="col-md-8">
-										<h2>Contact</h2>
+									<div class="col-md-12"><img src="img/about_me_v2.png" alt="SO"></div>
+								</div>
+								<div class="say-hello">
+									<div class="row">
+										<div class="col-md-8">
+											<h2>Contact</h2>
+										</div>
 									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<form>
-											<div class="row">
-												<div class="col-sm-6">
-													<input id="contact-name" type="text" name="contact-name" placeholder="Name">
+									<div class="row">
+										<div class="col-md-12">
+											<form>
+												<div class="row">
+													<div class="col-sm-6">
+														<input id="contact-name" type="text" name="contact-name" placeholder="Name">
+													</div>
+													<div class="col-sm-6">
+														<input id="contact-email" type="text" name="contact-email" placeholder="Email">
+													</div>
 												</div>
-												<div class="col-sm-6">
-													<input id="contact-email" type="text" name="contact-email" placeholder="Email">
+												<input id="contact-subject" type="text" name="contact-subject" placeholder="Subject">
+												<textarea id="contact-message" name="contact-message" placeholder="Message"></textarea><a class="btn" id="submit" href="#">Send Message</a>
+												<div id="message">
+													<div class="error"></div>
+													<div class="success"></div>
 												</div>
-											</div>
-											<input id="contact-subject" type="text" name="contact-subject" placeholder="Subject">
-											<textarea id="contact-message" name="contact-message" placeholder="Message"></textarea><a class="btn" id="submit" href="#">Send Message</a>
-											<div id="message">
-												<div class="error"></div>
-												<div class="success"></div>
-											</div>
-										</form>
+											</form>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</main>
+				</main>
+			</div>
 		</div>
-	</div>
-	<script src="js/plugins.min.js"></script>
-	<script src="js/functions.js"></script>
-	<script>
-		function sendEmail(e) {
+		<script src="js/plugins.min.js"></script>
+		<script src="js/functions.js"></script>
+		<script>
+			function sendEmail(e) {
 			  e.preventDefault();
 			  window.location.href = 'mailto:xxx@dollarmoda.pl';
 			}
-	</script>
-	<script>
-		const modal = document.getElementById('video-modal');
+			
+			
+		</script>
+		<script>
+			const modal = document.getElementById('video-modal');
 			const iframe = document.getElementById('yt-player');
 			
 			function openVideoModal(el) {
 			  const videoId = el.closest('.project-image').querySelector('video').dataset.videoId;
-			  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
-			  modal.classList.remove('hidden');
+			  
+			  // Pokaż modal najpierw
+			  modal.classList.add('active');
+			  
+			  // Dopiero po krótkim czasie ustaw src (lepsze wsparcie dla Safari)
+			  setTimeout(() => {
+			    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0&modestbranding=1`;
+			  }, 100);
 			}
 			
 			function closeVideoModal() {
-			  modal.classList.add('hidden');
-			  iframe.src = ''; // Zatrzymuje odtwarzanie po zamknięciu
+			  iframe.src = ''; // Zatrzymaj wideo
+			  modal.classList.remove('active');
 			}
 			
-			// Lazy loading video
+			// Klik poza modal-content = zamknij
+			modal.addEventListener('click', (e) => {
+			  if (!e.target.closest('.modal-content')) {
+			    closeVideoModal();
+			  }
+			});
+			
+			// Lazy loading dla video
 			const videos = document.querySelectorAll('.project-image video');
 			const observer = new IntersectionObserver((entries) => {
 			  entries.forEach(entry => {
@@ -121,9 +123,9 @@
 			});
 			
 			videos.forEach(v => observer.observe(v));
-	</script>
-	<script type="text/javascript">
-		function initMap() {
+		</script>
+		<script type="text/javascript">
+			function initMap() {
 				var mapOptions = {
 					scrollwheel: false,
 					zoom: 15,
@@ -140,13 +142,6 @@
 					title: 'Sonex'
 				});
 			}
-	</script>
-</body>
-
-</html>nex' }); }
-</script>
-</body>
-
-</html>>
-
+		</script>
+	</body>
 </html>

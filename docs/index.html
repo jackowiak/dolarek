@@ -179,16 +179,29 @@
 			
 			function openVideoModal(el) {
 			  const videoId = el.closest('.project-image').querySelector('video').dataset.videoId;
-			  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
-			  modal.classList.remove('hidden');
+			  
+			  // Pokaż modal najpierw
+			  modal.classList.add('active');
+			  
+			  // Dopiero po krótkim czasie ustaw src (lepsze wsparcie dla Safari)
+			  setTimeout(() => {
+			    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0&modestbranding=1`;
+			  }, 100);
 			}
 			
 			function closeVideoModal() {
-			  modal.classList.add('hidden');
-			  iframe.src = ''; // Zatrzymuje odtwarzanie po zamknięciu
+			  iframe.src = ''; // Zatrzymaj wideo
+			  modal.classList.remove('active');
 			}
 			
-			// Lazy loading video
+			// Klik poza modal-content = zamknij
+			modal.addEventListener('click', (e) => {
+			  if (!e.target.closest('.modal-content')) {
+			    closeVideoModal();
+			  }
+			});
+			
+			// Lazy loading dla video
 			const videos = document.querySelectorAll('.project-image video');
 			const observer = new IntersectionObserver((entries) => {
 			  entries.forEach(entry => {
