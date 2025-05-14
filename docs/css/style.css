@@ -2122,6 +2122,7 @@ input:focus, textarea:focus {
         position: relative;
         bottom: 30px;
         padding: 0 0 10px;
+        margin-top: 15px;
         font: bold;
     }
 
