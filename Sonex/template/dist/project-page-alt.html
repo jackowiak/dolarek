@@ -116,14 +116,14 @@
 			const iframe = document.getElementById('yt-player');
 			
 			function openVideoModal(el) {
-			  const videoId = el.closest('.project-image').querySelector('video').dataset.videoId;
+			  const videoId = el.dataset.videoId;
 			  
 			  // Pokaż modal najpierw
 			  modal.classList.add('active');
 			  
 			  // Dopiero po krótkim czasie ustaw src (lepsze wsparcie dla Safari)
 			  setTimeout(() => {
-			    iframe.src = `https://iframe.mediadelivery.net/embed/425607/55c500b8-3a3a-48f6-a019-9f07dac49d64?autoplay=true&loop=false&muted=false&preload=true&responsive=true`;
+			    iframe.src = `${videoId}?autoplay=1&loop=false&muted=false`;
 			  }, 100);
 			}
 			

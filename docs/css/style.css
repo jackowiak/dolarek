@@ -2128,17 +2128,22 @@ input:focus, textarea:focus {
         position: relative;
         bottom: 30px;
         padding: 0 0 10px;
-        margin-top: 15px;
+        margin-top: 30px;
         font: bold;
+    }
+
+    #sidebar nav ul {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 15px;
     }
 
     #sidebar nav ul li {
         display: inline-block;
-        margin: 0 5px;
     }
 
     #sidebar nav ul li.dropdown {
-        poisiion: relative;
+        position: relative;
         margin-right: 17px;
     }
 

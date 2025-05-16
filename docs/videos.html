@@ -38,7 +38,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="project-image">
-										<video src="img/projects/video/tylemam.mp4" autoplay loop muted playsinline preload="none" data-video-id="IA_CJ0ioXAU" onclick="openVideoModal(this)"></video>
+										<video src="img/projects/video/tylemam.mp4" autoplay loop muted playsinline preload="none" data-video-id="https://iframe.mediadelivery.net/embed/425607/039711d6-f60f-4f48-9825-44655a582c52?autoplay=true&amp;loop=false&amp;muted=false&amp;preload=true&amp;responsive=true" onclick="openVideoModal(this)"></video>
 									</div>
 								</div>
 							</div>
@@ -59,7 +59,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="project-image">
-										<video src="img/projects/video/proch.mp4" autoplay loop muted playsinline preload="none" data-video-id="DUi7pfOkdAw" onclick="openVideoModal(this)"></video>
+										<video src="img/projects/video/proch.mp4" autoplay loop muted playsinline preload="none" data-video-id="https://iframe.mediadelivery.net/embed/425607/476d8d88-4438-4865-a73f-820a8012cd88?autoplay=true&amp;loop=false&amp;muted=false&amp;preload=true&amp;responsive=true" onclick="openVideoModal(this)"></video>
 									</div>
 								</div>
 							</div>
@@ -73,7 +73,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="project-image">
-										<video src="img/projects/video/kemo.mp4" autoplay loop muted playsinline preload="none" data-video-id="Cz7du_hb9M0" onclick="openVideoModal(this)"></video>
+										<video src="img/projects/video/kemo.mp4" autoplay loop muted playsinline preload="none" data-video-id="https://iframe.mediadelivery.net/embed/425607/f00126b4-242e-4a93-aaa4-b440beacfde0?autoplay=true&amp;loop=false&amp;muted=false&amp;preload=true&amp;responsive=true" onclick="openVideoModal(this)"></video>
 									</div>
 								</div>
 							</div>
@@ -87,7 +87,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="project-image">
-										<video src="img/projects/video/bdawg.mp4" autoplay loop muted playsinline preload="none" data-video-id="_nkvpdeJ0Ho" onclick="openVideoModal(this)"></video>
+										<video src="img/projects/video/bdawg.mp4" autoplay loop muted playsinline preload="none" data-video-id="https://iframe.mediadelivery.net/embed/425607/7e310ffd-e5f5-4895-8ec8-d0c951eb59d2?autoplay=true&amp;loop=false&amp;muted=false&amp;preload=true&amp;responsive=true" onclick="openVideoModal(this)"></video>
 									</div>
 								</div>
 							</div>
@@ -118,14 +118,14 @@
 			const iframe = document.getElementById('yt-player');
 			
 			function openVideoModal(el) {
-			  const videoId = el.closest('.project-image').querySelector('video').dataset.videoId;
+			  const videoId = el.dataset.videoId;
 			  
 			  // Pokaż modal najpierw
 			  modal.classList.add('active');
 			  
 			  // Dopiero po krótkim czasie ustaw src (lepsze wsparcie dla Safari)
 			  setTimeout(() => {
-			    iframe.src = `https://iframe.mediadelivery.net/embed/425607/55c500b8-3a3a-48f6-a019-9f07dac49d64?autoplay=true&loop=false&muted=false&preload=true&responsive=true`;
+			    iframe.src = `${videoId}?autoplay=1&loop=false&muted=false`;
 			  }, 100);
 			}
 			
