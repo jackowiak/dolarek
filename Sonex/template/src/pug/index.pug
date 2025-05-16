@@ -1,40 +1,61 @@
 extends layout/head
+
 block title
-	title DOLLAR MODA by Henryk Brzeski
+  title DOLLAR MODA by Henryk Brzeski
+
 block content
-	body#index-page
-		.global-outer
-			.global-inner
-				header#sidebar
-					.sidebar-inner
-						include layout/navigation
-				main#main
-					.main-outer
-						.container-fluid
-							.row
-								.col-md-12
-									#works-grid
-										.gutter
-										mixin works-item(title, categories, list, img, slug)
-											a(class='works-item active smooth-leave ' + categories, href=`p_${slug}.html`)
-												.picture
-													.content
-														.text
-															h2=title
-															ul
-																each val in list
-																	li=val
-													img(src=img, alt='')
-										+works-item('Ćpaj Stajl - Lato w ghettcie', 'typography illustration', ['Typography', 'Illustration'], 'img/projects/cs_lwg/thumbnail.png', 'lato_w_ghettcie')
-										+works-item('Ćpaj Stajl - Melodramat', 'branding', ['Branding'], 'img/projects/cs_melodramat/thumbnail.png', 'melodramat')
-										+works-item('Ćpaj Stajl - Białe szaleństwo', 'typography branding', ['Typography', 'Branding'], 'img/projects/cs_bs/thumbnail.png', 'biale_szalenstwo')
-										+works-item("Ćpaj Stajl - Złoty strzał", 'illustration', ['Illustration'], 'img/projects/cs_zs/thumbnail.png', 'zloty_strzal')
-										+works-item("Kacperczyk", 'branding', ['Branding'], 'img/projects/kacperczyk/thumbnail.png', 'kacperczyk')
-										+works-item('Lordofon', 'branding', ['Branding'], 'img/projects/lordofon/thumbnail.png', 'lordofon')
-										+works-item('Tacet', 'illustration typography', ['Illustration', 'Typography'], 'img/projects/tacet/thumbnail.png', 'tacet')
-										+works-item('Other', 'typography', ['Typography'], 'img/projects/rest/thumbnail.png', 'other')
-								//- .row
-								//- 	.col-md-12
-								//- 		.load-more
-								//- 			a.btn(href='#') Load More huju
-		include layout/js
+  body#project-page
+    .global-outer
+      .global-inner
+        header#sidebar
+          .sidebar-inner
+            include layout/navigation
+        main#main
+          .main-outer
+            .container-fluid
+
+              //- Definicja mixina video-item z argumentami
+              mixin video-item(src, dataVideoId, caption)
+                .row
+                  .col-md-12
+                    .project-image
+                      video(
+                        src=src,
+                        autoplay,
+                        loop,
+                        muted,
+                        playsinline,
+                        preload='none',
+                        data-video-id=dataVideoId,
+                        onclick='openVideoModal(this)'
+                      )
+                      if caption
+                        .picture
+                          .content
+                            .text
+                              h2= caption
+
+              //- Wywołania mixina z różnymi video
+              +video-item('img/projects/video/tylemam.mp4', 'https://iframe.mediadelivery.net/embed/425607/039711d6-f60f-4f48-9825-44655a582c52?autoplay=true&loop=false&muted=false&preload=true&responsive=true', null)
+              +video-item('img/projects/video/tacet.mp4', 'ntCnydwV5wM', null)
+              +video-item('img/projects/video/bnr.mp4', 'imlzBFMq48A', null)
+              +video-item('img/projects/video/proch.mp4', 'https://iframe.mediadelivery.net/embed/425607/476d8d88-4438-4865-a73f-820a8012cd88?autoplay=true&loop=false&muted=false&preload=true&responsive=true', null)
+              +video-item('img/projects/video/catchup.mp4', 'irPZYl5F-Bg', null)
+              +video-item('img/projects/video/kemo.mp4', 'https://iframe.mediadelivery.net/embed/425607/f00126b4-242e-4a93-aaa4-b440beacfde0?autoplay=true&loop=false&muted=false&preload=true&responsive=true', null)
+              +video-item('img/projects/video/synek.mp4', 'tuFr-j23nHQ', null)
+              +video-item('img/projects/video/bdawg.mp4', 'https://iframe.mediadelivery.net/embed/425607/7e310ffd-e5f5-4895-8ec8-d0c951eb59d2?autoplay=true&loop=false&muted=false&preload=true&responsive=true', 'bdawg')
+
+          //- Modal do YouTube
+          #video-modal.modal
+            .modal-content
+              iframe#yt-player(
+                width='100%',
+                height='100%',
+                frameborder='0',
+                allow='autoplay; fullscreen',
+                allowfullscreen,
+                playsinline
+              )
+            button.close(onclick='closeVideoModal()') ✕
+
+    include layout/js
