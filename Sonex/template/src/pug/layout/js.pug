@@ -50,3 +50,25 @@ script.
 
   videos.forEach(v => observer.observe(v));
 
+script.
+  document.addEventListener('DOMContentLoaded', function () {
+    const carousel = document.querySelector('#project-carousel');
+    let startX = 0;
+
+    if (carousel) {
+      carousel.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+      });
+
+      carousel.addEventListener('touchend', (e) => {
+        const endX = e.changedTouches[0].clientX;
+        const diffX = startX - endX;
+
+        if (Math.abs(diffX) > 50) {
+          const direction = diffX > 0 ? 'next' : 'prev';
+          $(carousel).carousel(direction); // jQuery Bootstrap API
+        }
+      });
+    }
+  });
+
