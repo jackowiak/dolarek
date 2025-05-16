@@ -23,8 +23,8 @@ block content
                       muted,
                       playsinline,
                       preload='none',
-                      data-video-id='https://iframe.mediadelivery.net/embed/425607/039711d6-f60f-4f48-9825-44655a582c52?autoplay=true&loop=false&muted=false&preload=true&responsive=true'
-											onclick='openVideoModal(this)'
+                      data-video-id='https://iframe.mediadelivery.net/embed/425607/039711d6-f60f-4f48-9825-44655a582c52?autoplay=true&loop=false&muted=false&preload=true&responsive=true',
+                      onclick='openVideoModal(this)'
                     )
               .row
                 .col-md-12
@@ -36,8 +36,8 @@ block content
                       muted,
                       playsinline,
                       preload='none',
-                      data-video-id='ntCnydwV5wM'
-											onclick='openVideoModal(this)'
+                      data-video-id='ntCnydwV5wM',
+                      onclick='openVideoModal(this)'
                     )
               .row
                 .col-md-12
@@ -49,8 +49,8 @@ block content
                       muted,
                       playsinline,
                       preload='none',
-                      data-video-id='imlzBFMq48A'
-											onclick='openVideoModal(this)'
+                      data-video-id='imlzBFMq48A',
+                      onclick='openVideoModal(this)'
                     )
               .row
                 .col-md-12
@@ -62,8 +62,8 @@ block content
                       muted,
                       playsinline,
                       preload='none',
-                      data-video-id='https://iframe.mediadelivery.net/embed/425607/476d8d88-4438-4865-a73f-820a8012cd88?autoplay=true&loop=false&muted=false&preload=true&responsive=true'
-											onclick='openVideoModal(this)'
+                      data-video-id='https://iframe.mediadelivery.net/embed/425607/476d8d88-4438-4865-a73f-820a8012cd88?autoplay=true&loop=false&muted=false&preload=true&responsive=true',
+                      onclick='openVideoModal(this)'
                     )
               .row
                 .col-md-12
@@ -75,8 +75,8 @@ block content
                       muted,
                       playsinline,
                       preload='none',
-                      data-video-id='irPZYl5F-Bg'
-											onclick='openVideoModal(this)'
+                      data-video-id='irPZYl5F-Bg',
+                      onclick='openVideoModal(this)'
                     )
               .row
                 .col-md-12
@@ -88,8 +88,8 @@ block content
                       muted,
                       playsinline,
                       preload='none',
-                      data-video-id='https://iframe.mediadelivery.net/embed/425607/f00126b4-242e-4a93-aaa4-b440beacfde0?autoplay=true&loop=false&muted=false&preload=true&responsive=true'
-											onclick='openVideoModal(this)'
+                      data-video-id='https://iframe.mediadelivery.net/embed/425607/f00126b4-242e-4a93-aaa4-b440beacfde0?autoplay=true&loop=false&muted=false&preload=true&responsive=true',
+                      onclick='openVideoModal(this)'
                     )
               .row
                 .col-md-12
@@ -101,8 +101,8 @@ block content
                       muted,
                       playsinline,
                       preload='none',
-                      data-video-id='tuFr-j23nHQ'
-											onclick='openVideoModal(this)'
+                      data-video-id='tuFr-j23nHQ',
+                      onclick='openVideoModal(this)'
                     )
               .row
                 .col-md-12
@@ -114,12 +114,25 @@ block content
                       muted,
                       playsinline,
                       preload='none',
-                      data-video-id='https://iframe.mediadelivery.net/embed/425607/7e310ffd-e5f5-4895-8ec8-d0c951eb59d2?autoplay=true&loop=false&muted=false&preload=true&responsive=true'
-											onclick='openVideoModal(this)'
+                      data-video-id='https://iframe.mediadelivery.net/embed/425607/7e310ffd-e5f5-4895-8ec8-d0c951eb59d2?autoplay=true&loop=false&muted=false&preload=true&responsive=true',
+                      onclick='openVideoModal(this)'
                     )
+                    .picture
+                      .content
+                        .text
+                          h2 bdawg
+
             // Modal do YouTube
             #video-modal.modal
               .modal-content
-                iframe#yt-player(width='100%' height='100%' frameborder='0' allow='fullscreen' allowfullscreen playsinline)
+                iframe#yt-player(
+                  width='100%',
+                  height='100%',
+                  frameborder='0',
+                  allow='autoplay; fullscreen',
+                  allowfullscreen,
+                  playsinline
+                )
               button.close(onclick='closeVideoModal()') ✕
+
     include layout/js

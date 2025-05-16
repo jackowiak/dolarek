@@ -219,7 +219,7 @@ input:focus, textarea:focus {
     border: 1px solid #fff;
     overflow: hidden;
     transform: translateY(100%);
-    opacity: 0;
+    opacity: .5;
 }
 
 .carousel .carousel-indicators li:nth-child(1) {
