@@ -18,22 +18,20 @@ block content
               mixin video-item(src, dataVideoId, caption)
                 .row
                   .col-md-12
-                    .project-image
-                      video(
-                        src=src,
-                        autoplay,
-                        loop,
-                        muted,
-                        playsinline,
-                        preload='none',
-                        data-video-id=dataVideoId,
-                        onclick='openVideoModal(this)'
-                      )
-                      if caption
-                        .picture
-                          .content
-                            .text
-                              h2= caption
+                    .video-item
+                      .picture
+                        .content
+                          .text
+                            h2= caption
+                        video(
+                          src=src
+                          autoplay
+                          loop
+                          muted
+                          playsinline
+                          preload='none'
+                          data-video-id=dataVideoId
+                        )
 
               //- Wywołania mixina z różnymi video
               +video-item('img/projects/video/tylemam.mp4', 'https://iframe.mediadelivery.net/embed/425607/039711d6-f60f-4f48-9825-44655a582c52?autoplay=true&loop=false&muted=false&preload=true&responsive=true', null)
@@ -49,11 +47,11 @@ block content
           #video-modal.modal
             .modal-content
               iframe#yt-player(
-                width='100%',
-                height='100%',
-                frameborder='0',
-                allow='autoplay; fullscreen',
-                allowfullscreen,
+                width='100%'
+                height='100%'
+                frameborder='0'
+                allow='autoplay; fullscreen'
+                allowfullscreen
                 playsinline
               )
             button.close(onclick='closeVideoModal()') ✕
