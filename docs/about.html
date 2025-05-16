@@ -90,7 +90,7 @@
 	<script>
 		function sendEmail(e) {
 			  e.preventDefault();
-			  window.location.href = 'mailto:xxx@dollarmoda.pl';
+			  window.location.href = 'mailto:dollarmoda@gmail.com';
 			}
 	</script>
 	<script>
@@ -135,6 +135,28 @@
 			
 			videos.forEach(v => observer.observe(v));
 	</script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			  const carousel = document.querySelector('#project-carousel');
+			  let startX = 0;
+			
+			  if (carousel) {
+			    carousel.addEventListener('touchstart', (e) => {
+			      startX = e.touches[0].clientX;
+			    });
+			
+			    carousel.addEventListener('touchend', (e) => {
+			      const endX = e.changedTouches[0].clientX;
+			      const diffX = startX - endX;
+			
+			      if (Math.abs(diffX) > 50) {
+			        const direction = diffX > 0 ? 'next' : 'prev';
+			        $(carousel).carousel(direction); // jQuery Bootstrap API
+			      }
+			    });
+			  }
+			});
+	</script>
 	<script type="text/javascript">
 		function initMap() {
 				var mapOptions = {
@@ -156,15 +178,7 @@
 	</script>
 </body>
 
-</html>visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
-				};
-				var mapElement = document.getElementById('google-map');
-				var map = new google.maps.Map(mapElement, mapOptions);
-				var marker = new google.maps.Marker({
-					position: new google.maps.LatLng(48.507664, 32.268486),
-					map: map,
-					icon: 'img/favicon.png',
-					title: 'Sonex'
+</html>ex'
 				});
 			}
 		</script>
