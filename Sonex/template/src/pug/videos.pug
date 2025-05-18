@@ -18,7 +18,7 @@ block content
               mixin video-item(src, dataVideoId, title, list)
                 .row
                   .col-md-12
-                    .videos-item
+                    .videos-item(data-video-id=dataVideoId)
                       .picture
                         .content
                           .text
@@ -32,7 +32,6 @@ block content
                           loop
                           muted
                           playsinline
-                          data-video-id=dataVideoId
                         )
 
               //- Wywołania mixina z różnymi video
