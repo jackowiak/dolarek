@@ -953,6 +953,10 @@ input:focus, textarea:focus {
     overflow: hidden;
 }
 
+.videos-grid .single-video {
+    margin-top: 4.7%;
+}
+
 .videos-grid .gutter {
     width: 2.35%;
 }
@@ -2364,6 +2368,10 @@ input:focus, textarea:focus {
 
     .videos-grid .videos-item {
         margin-bottom: 11.75%;
+    }
+
+    .videos-grid .videos-grid, .videos-grid .single-video {
+        margin-top: 9.4%;
     }
 }
 

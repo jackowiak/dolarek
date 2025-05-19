@@ -1,5 +1,5 @@
 <?php
-$to = 'mail@mail.com'; //Change to your e-mail
+$to = 'dollarmoda@gmail.com'; //Change to your e-mail
 
 $name = $_POST['name'];
 $subject = $_POST['subject'];

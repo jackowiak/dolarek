@@ -1,89 +1,100 @@
 extends layout/head
+
 block title
-	title DOLLAR MODA by Henryk Brzeski
+  title DOLLAR MODA by Henryk Brzeski
+
 block content
-	body#project-page
-		.global-outer
-			.global-inner
-				header#sidebar
-					.sidebar-inner
-						include layout/navigation
-				main#main
-					.main-outer
-						.container-fluid
+  body#project-page
+    .global-outer
+      .global-inner
+        header#sidebar
+          .sidebar-inner
+            include layout/navigation
+        main#main
+          .main-outer.videos-grid
+            .container-fluid
 
+              .row
+                .col-md-12
+                  #project-carousel.carousel.slide
+                    ol.carousel-indicators
+                      li.active(data-target='.carousel' data-slide-to='0')
+                      li(data-target='.carousel' data-slide-to='1')
+                      li(data-target='.carousel' data-slide-to='2')
+                      li(data-target='.carousel' data-slide-to='3')
+                      li(data-target='.carousel' data-slide-to='4')
+                      li(data-target='.carousel' data-slide-to='5')
+                    .carousel-inner
+                      .item.active
+                        img(src='img/projects/tacet/karuzela1.jpg' alt='')
+                      .item
+                        img(src='img/projects/tacet/karuzela2.jpg' alt='')
+                      .item
+                        img(src='img/projects/tacet/karuzela3.jpg' alt='')
+                      .item
+                        img(src='img/projects/tacet/karuzela4.jpg' alt='')
+                      .item
+                        img(src='img/projects/tacet/karuzela5.jpg' alt='')
+                      .item
+                        img(src='img/projects/tacet/karuzela6.jpg' alt='')
 
-							.row
-								.col-md-12
-									#project-carousel.carousel.slide
-										ol.carousel-indicators
-											li.active(data-target='.carousel' data-slide-to='0')
-											li(data-target='.carousel' data-slide-to='1')
-											li(data-target='.carousel' data-slide-to='2')
-											li(data-target='.carousel' data-slide-to='3')
-											li(data-target='.carousel' data-slide-to='4')
-											li(data-target='.carousel' data-slide-to='5')
-										.carousel-inner
-											.item.active
-												img(src='img/projects/tacet/karuzela1.jpg' alt='')
-											.item
-												img(src='img/projects/tacet/karuzela2.jpg' alt='')
-											.item
-												img(src='img/projects/tacet/karuzela3.jpg' alt='')
-											.item
-												img(src='img/projects/tacet/karuzela4.jpg' alt='')
-											.item
-												img(src='img/projects/tacet/karuzela5.jpg' alt='')
-											.item
-												img(src='img/projects/tacet/karuzela6.jpg' alt='')
-							.row
-								.col-md-9
-									.description
-										h1 Tacet
-										ul.categories
-											li Typography
-											li Branding
-										p
-											| I had the pleasure of overseeing and directing the entire visual concept for Wojtek Urbański's project - Tacet. This includes the logo, single covers (screen printing on a steel disc), and the music video for the track “Flare.”
+              .row
+                .col-md-9
+                  .description
+                    h1 Tacet
+                    ul.categories
+                      li Typography
+                      li Branding
+                    p
+                      | I had the pleasure of overseeing and directing the entire visual concept for Wojtek Urbański's project - Tacet. This includes the logo, single covers (screen printing on a steel disc), and the music video for the track “Flare.”
+                    p
+                      | 
+                .col-md-3
+                  .details
+                    ul
+                      li
+                        | Date:
+                        span February 2024
+                      li
+                        | Client:
+                        span Dyspensa Records
 
-										p
-											|
-								.col-md-3
-									.details
-										ul
-											li
-												| Date:
-												span February 2024
-											li
-												| Client:
-												span Dyspensa Records
+              .row
+                .col-md-12
+                  .project-image
+                    img(src='img/projects/tacet/2.png' alt='')
 
-							.row
-								.col-md-12
-									.project-image
-										img(src='img/projects/tacet/2.png' alt='')
-							.row
-								.col-md-6
-									.project-image
-										img(src='img/projects/tacet/3.png' alt='')
-								.col-md-6
-									.project-image
-										img(src='img/projects/tacet/4.png' alt='')
-							.row
-								.col-md-12
-									.project-image
-										video(
-                      src='img/projects/video/tacet.mp4',
-                      autoplay,
-                      loop,
-                      muted,
-                      playsinline,
-                      preload='none',
-                      data-video-id='ntCnydwV5wM'
-											onclick='openVideoModal(this)'
-                    )
-						#video-modal.hidden(onclick='closeVideoModal()')
-							.modal-content
-								iframe#yt-player(width='100%' height='100%' frameborder='0' allow='autoplay; fullscreen')
-							button.close(onclick='closeVideoModal()') ✕
-		include layout/js
+              .row
+                .col-md-6
+                  .project-image
+                    img(src='img/projects/tacet/3.png' alt='')
+                .col-md-6
+                  .project-image
+                    img(src='img/projects/tacet/4.png' alt='')
+
+              //- Zmieniony blok video zgodny z videos.pug
+              .row.single-video
+                .col-md-12
+                  .videos-item(data-video-id='https://iframe.mediadelivery.net/embed/425607/55c500b8-3a3a-48f6-a019-9f07dac49d64?autoplay=true&loop=false&muted=false&preload=true&responsive=true')
+                    .picture
+                      .content
+                        .text
+                          h2 Tacet - Flare
+                          ul
+                            li Director
+                      video(
+                        src='img/projects/video/tacet.mp4',
+                        autoplay,
+                        loop,
+                        muted,
+                        playsinline,
+                        preload='none',
+                      )
+
+            //- Modal do zewnętrznego iframe
+            #video-modal.modal
+              .modal-content
+                iframe#yt-player(width='100%' height='100%' frameborder='0' allow='autoplay; fullscreen' allowfullscreen playsinline)
+              button.close(onclick='closeVideoModal()') ✕
+
+    include layout/js
