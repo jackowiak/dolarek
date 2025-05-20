@@ -2132,15 +2132,23 @@ input:focus, textarea:focus {
 
 #contact-page #main .say-hello {
     margin-top: 80px;
+    text-align: center;
+}
+
+#contact-page #main .say-hello i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #000;
+    transition: color .3s;
 }
 
 #contact-page #main .say-hello h2 {
     line-height: 1;
-    margin: 0;
+    margin: 0 0 50px 0;
 }
 
 #contact-page #main .say-hello p {
-    margin-top: 25px;
+    margin-top: 10px;
 }
 
 #contact-page #main .say-hello form {

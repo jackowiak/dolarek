@@ -1,6 +1,8 @@
 extends layout/head
+
 block title
 	title DOLLAR MODA by Henryk Brzeski
+
 block content
 	body#contact-page
 		.global-outer
@@ -17,38 +19,17 @@ block content
 										img(src='img/about_me_v2.png' alt='SO')
 								.say-hello
 									.row
-										.col-md-8
+										.col-md-12
 											h2 Contact
 									.row
-										.col-md-12
-											form(action='mail.php' method='POST')
-												.row
-													.col-sm-6
-														input#contact-name(type='text' name='contact-name' placeholder='Name')
-													.col-sm-6
-														input#contact-email(type='text' name='contact-email' placeholder='Email')
-												input#contact-subject(type='text' name='contact-subject' placeholder='Subject')
-												textarea#contact-message(name='contact-message' placeholder='Message')
-												a#submit.btn(href='#') Send Message
-												#message
-													.error
-													.success
+										.col-md-12.text-center
+											.row
+												.col-xs-6
+													a(href='mailto:dollarmoda@gmail.com' target='_blank')
+														i.fas.fa-envelope.fa-3x
+													p dollarmoda@gmail.com
+												.col-xs-6
+													a(href='https://www.instagram.com/dollarmoda' target='_blank')
+														i.fab.fa-instagram.fa-3x
+
 		include layout/js
-		script(type='text/javascript').
-			function initMap() {
-				var mapOptions = {
-					scrollwheel: false,
-					zoom: 15,
-					disableDefaultUI: true,
-					center: new google.maps.LatLng(48.507664, 32.268486),
-					styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
-				};
-				var mapElement = document.getElementById('google-map');
-				var map = new google.maps.Map(mapElement, mapOptions);
-				var marker = new google.maps.Marker({
-					position: new google.maps.LatLng(48.507664, 32.268486),
-					map: map,
-					icon: 'img/favicon.png',
-					title: 'Sonex'
-				});
-			}
