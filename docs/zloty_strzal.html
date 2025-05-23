@@ -37,47 +37,39 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="title-image"><img src="img/projects/kacperczyk/1.png" alt=""></div>
+									<div class="title-image"><img src="img/projects/cs_zs/1.png" alt=""></div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-9">
 									<div class="description">
-										<h1>Kacperczyk - Posters</h1>
+										<h1>Ćpaj stajl - Złoty Strzał </h1>
 										<ul class="categories">
 											<li>Typography</li>
 											<li>Branding</li>
 										</ul>
-										<p>Posters illustrating each city visited by the Kacperczyk brothers during the "End of the World Tour."</p>
+										<p>Objects made from trash and papier-mâché, then photographed. The front features a sculpture: a satirical portrait of all the group members in the form of a single creature. The installation was created from trash found in the courtyards of Krakow's old town district.</p>
+										<p></p>
 									</div>
 								</div>
 								<div class="col-md-3">
 									<div class="details">
 										<ul>
-											<li>Date:<span>February 2024</span></li>
-											<li>Client:<span>SBM Label</span></li>
+											<li>Date:<span>March 2022</span></li>
+											<li>Client:<span>Ćpaj Stajl</span></li>
 										</ul>
 									</div>
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-6">
-									<div class="project-image"><img src="img/projects/kacperczyk/5.png" alt=""></div>
-								</div>
-								<div class="col-md-6">
-									<div class="project-image"><img src="img/projects/kacperczyk/6.png" alt=""></div>
-								</div>
 								<div class="col-md-12">
-									<div class="project-image"><img src="img/projects/kacperczyk/4.png" alt=""></div>
+									<div class="project-image"><img src="img/projects/cs_zs/2.png" alt=""></div>
 								</div>
 								<div class="col-md-6">
-									<div class="project-image"><img src="img/projects/kacperczyk/3.png" alt=""></div>
+									<div class="project-image"><img src="img/projects/cs_zs/c1.png" alt=""></div>
 								</div>
 								<div class="col-md-6">
-									<div class="project-image"><img src="img/projects/kacperczyk/7.png" alt=""></div>
-								</div>
-								<div class="col-md-12">
-									<div class="project-image"><img src="img/projects/kacperczyk/2.png" alt=""></div>
+									<div class="project-image"><img src="img/projects/cs_zs/c2.png" alt=""></div>
 								</div>
 							</div>
 						</div>
@@ -101,12 +93,12 @@
 			
 			  function openVideoModal(videoId) {
 			    if (!modal || !iframe) return;
-			    console.log('openVideoModal videoId:', videoId);
-			
+			    iframe.style.visibility = 'hidden';
+			    iframe.src = videoId;
+			    iframe.onload = () => {
+			      setTimeout(() => { iframe.style.visibility = 'visible' }, 100);
+			    };
 			    modal.classList.add('active');
-			    setTimeout(() => {
-			      iframe.src = videoId;
-			    }, 100);
 			  }
 			
 			  function closeVideoModal() {

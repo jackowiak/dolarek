@@ -41,17 +41,11 @@
 								</div>
 								<div class="say-hello">
 									<div class="row">
-										<div class="col-md-12">
-											<h2>Contact</h2>
-										</div>
-									</div>
-									<div class="row">
 										<div class="col-md-12 text-center">
+											<h4>CONTACT:</h4>
 											<div class="row">
-												<div class="col-xs-6"><a href="mailto:dollarmoda@gmail.com" target="_blank"><i class="fas fa-envelope fa-3x"></i></a>
-													<p>dollarmoda@gmail.com</p>
-												</div>
-												<div class="col-xs-6"><a href="https://www.instagram.com/dollarmoda" target="_blank"><i class="fab fa-instagram fa-3x"></i></a></div>
+												<div class="col-xs-12 about-contact-row"><a href="mailto:dollarmoda@gmail.com" target="_blank"><i class="fas fa-envelope fa-3x"></i><span>DOLLARMODA@GMAIL.COM</span></a></div>
+												<div class="col-xs-12 about-contact-row"><a href="https://www.instagram.com/dollarmoda" target="_blank"><i class="fab fa-instagram fa-3x"></i><span>DOLLAR MODA</span></a></div>
 											</div>
 										</div>
 									</div>
@@ -78,12 +72,12 @@
 			
 			  function openVideoModal(videoId) {
 			    if (!modal || !iframe) return;
-			    console.log('openVideoModal videoId:', videoId);
-			
+			    iframe.style.visibility = 'hidden';
+			    iframe.src = videoId;
+			    iframe.onload = () => {
+			      setTimeout(() => { iframe.style.visibility = 'visible' }, 100);
+			    };
 			    modal.classList.add('active');
-			    setTimeout(() => {
-			      iframe.src = videoId;
-			    }, 100);
 			  }
 			
 			  function closeVideoModal() {

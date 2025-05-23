@@ -96,12 +96,12 @@
 			
 			  function openVideoModal(videoId) {
 			    if (!modal || !iframe) return;
-			    console.log('openVideoModal videoId:', videoId);
-			
+			    iframe.style.visibility = 'hidden';
+			    iframe.src = videoId;
+			    iframe.onload = () => {
+			      setTimeout(() => { iframe.style.visibility = 'visible' }, 100);
+			    };
 			    modal.classList.add('active');
-			    setTimeout(() => {
-			      iframe.src = videoId;
-			    }, 100);
 			  }
 			
 			  function closeVideoModal() {

@@ -38,7 +38,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div id="works-grid">
-										<div class="gutter"></div><a class="works-item active smooth-leave typography illustration" href="p_lato_w_ghettcie.html">
+										<div class="gutter"></div><a class="works-item active smooth-leave typography illustration" href="lato_w_ghettcie.html">
 																					<div class="picture">
 																						<div class="content">
 																							<div class="text">
@@ -49,7 +49,7 @@
 																								</ul>
 																							</div>
 																						</div><img src="img/projects/cs_lwg/thumbnail.png" alt="">
-																					</div></a><a class="works-item active smooth-leave branding" href="p_melodramat.html">
+																					</div></a><a class="works-item active smooth-leave branding" href="melodramat.html">
 																					<div class="picture">
 																						<div class="content">
 																							<div class="text">
@@ -59,7 +59,7 @@
 																								</ul>
 																							</div>
 																						</div><img src="img/projects/cs_melodramat/thumbnail.png" alt="">
-																					</div></a><a class="works-item active smooth-leave typography branding" href="p_biale_szalenstwo.html">
+																					</div></a><a class="works-item active smooth-leave typography branding" href="biale_szalenstwo.html">
 																					<div class="picture">
 																						<div class="content">
 																							<div class="text">
@@ -70,7 +70,7 @@
 																								</ul>
 																							</div>
 																						</div><img src="img/projects/cs_bs/thumbnail.png" alt="">
-																					</div></a><a class="works-item active smooth-leave illustration" href="p_zloty_strzal.html">
+																					</div></a><a class="works-item active smooth-leave illustration" href="zloty_strzal.html">
 																					<div class="picture">
 																						<div class="content">
 																							<div class="text">
@@ -80,7 +80,7 @@
 																								</ul>
 																							</div>
 																						</div><img src="img/projects/cs_zs/thumbnail.png" alt="">
-																					</div></a><a class="works-item active smooth-leave branding" href="p_kacperczyk.html">
+																					</div></a><a class="works-item active smooth-leave branding" href="kacperczyk.html">
 																					<div class="picture">
 																						<div class="content">
 																							<div class="text">
@@ -90,7 +90,7 @@
 																								</ul>
 																							</div>
 																						</div><img src="img/projects/kacperczyk/thumbnail.png" alt="">
-																					</div></a><a class="works-item active smooth-leave branding" href="p_lordofon.html">
+																					</div></a><a class="works-item active smooth-leave branding" href="lordofon.html">
 																					<div class="picture">
 																						<div class="content">
 																							<div class="text">
@@ -100,7 +100,7 @@
 																								</ul>
 																							</div>
 																						</div><img src="img/projects/lordofon/thumbnail.png" alt="">
-																					</div></a><a class="works-item active smooth-leave illustration typography" href="p_tacet.html">
+																					</div></a><a class="works-item active smooth-leave illustration typography" href="tacet.html">
 																					<div class="picture">
 																						<div class="content">
 																							<div class="text">
@@ -111,7 +111,7 @@
 																								</ul>
 																							</div>
 																						</div><img src="img/projects/tacet/thumbnail.png" alt="">
-																					</div></a><a class="works-item active smooth-leave typography" href="p_other.html">
+																					</div></a><a class="works-item active smooth-leave typography" href="other.html">
 																					<div class="picture">
 																						<div class="content">
 																							<div class="text">
@@ -146,12 +146,12 @@
 			
 			  function openVideoModal(videoId) {
 			    if (!modal || !iframe) return;
-			    console.log('openVideoModal videoId:', videoId);
-			
+			    iframe.style.visibility = 'hidden';
+			    iframe.src = videoId;
+			    iframe.onload = () => {
+			      setTimeout(() => { iframe.style.visibility = 'visible' }, 100);
+			    };
 			    modal.classList.add('active');
-			    setTimeout(() => {
-			      iframe.src = videoId;
-			    }, 100);
 			  }
 			
 			  function closeVideoModal() {
