@@ -2146,7 +2146,7 @@ input:focus, textarea:focus {
 
 #contact-page #main .say-hello .about-contact-row a {
     font: Roboto;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     height: 25px;
